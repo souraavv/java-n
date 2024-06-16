@@ -220,9 +220,9 @@ System.out.println(s2 == s3); // true
 ```mermaid
 graph TD
   1[Java] --> 2[JDK Contains <br> JDE <br> <br>] --> 5((Different version <br> based on OS<br> & architecture <br><br>))
-	1 --> 3[JDE]
-	1 --> 4[Open JDK]
-	3 --> 5
+    1 --> 3[JDE]
+    1 --> 4[Open JDK]
+    3 --> 5
 ```
 
 - Basic development system for Java is called as **JDK**
@@ -243,7 +243,7 @@ graph TD
 ```mermaid
 graph TD
   1(Command Line Interface) --> 2((javac<br><br>)) --> 4[Generate Byte code <br> with .class extension <br><br> ]
-	1 --> 3((java<br><br>)) --> 5[Used to Run <br> the java Code<br><br>]
+    1 --> 3((java<br><br>)) --> 5[Used to Run <br> the java Code<br><br>]
 ```
 
 - `javac` command is use to compile the java code and generate `.class` extension files
@@ -254,28 +254,27 @@ graph TD
 
 ```mermaid
 graph LR
-	subgraph Package
-	direction TB
-	  1[Packages<br>in Java <br> <br>] --> 2[Named Package <br> <br>]
-		1 --> 3[Default Package<br><br>]
-	end
-	subgraph Class
-	direction LR
-		4[Class in Java] --> 1
-	end
-	subgraph Module
-	direction LR
-	5[Module]
-	1 --> 5
-	end
-	
-
+    subgraph Package
+    direction TB
+      1[Packages<br>in Java <br> <br>] --> 2[Named Package <br> <br>]
+        1 --> 3[Default Package<br><br>]
+    end
+    subgraph Class
+    direction LR
+        4[Class in Java] --> 1
+    end
+    subgraph Module
+    direction LR
+    5[Module]
+    1 --> 5
+    end
+    
 ```
 
 - Every class in java is contained in something called **package**
 - All the Java’s standard classes are in **named packages**.
 - This include even classes like `String` and `System`, which are in a package called `java.lang` are automatically imported into any Java file
-- But classes in other package must be imported using `import` ****directive
+- But classes in other package must be imported using `import` directive
 
 <aside>
 📌 Classes that are not put into any package belongs to `default` package
@@ -297,10 +296,10 @@ Java is a free format language and thus there are no syntax rule for formatting 
 
 ```java
 if (conditions) {
-		statement 1 
+    statement 1 
 }
 else {
-	statement 2
+    statement 2
 }
 ```
 
@@ -311,11 +310,11 @@ else {
     
     ```java
     static void factorial (int target) {
-    	long fact = 1;
-    	do {
-    			fact *= target--;
-    	} while (target > 0);
-    	System.out.println("Factoial " + fact);
+        long fact = 1;
+        do {
+                fact *= target--;
+        } while (target > 0);
+        System.out.println("Factoial " + fact);
     }
     ```
     
@@ -325,13 +324,13 @@ else {
 📌 You can also have the **name tagging** to the loop and thus break and continue can be associated with the specific loop..
 
 ```java
-**bigloop**: while (i < n) { 
-		j = 0; 
-		while (j < m) { 
-				if (s1.charAt(i) == s1.charAt(j)) { 
-						break **bigloop**; 
-				} 
-		}
+bigloop: while (i < n) { 
+    j = 0; 
+    while (j < m) { 
+        if (s1.charAt(i) == s1.charAt(j)) { 
+                break bigloop; 
+        } 
+    }
 }
 ```
 
@@ -341,7 +340,7 @@ else {
     
     ```java
     for (int i = 0; i < n; ++i) { 
-    		System.out.println("i = " + i);
+        System.out.println("i = " + i);
     }
     ```
     
@@ -349,7 +348,7 @@ else {
     
     ```java
     for (String name: names) {
-    	System.out.println(name);
+        System.out.println(name);
     }
     ```
     
@@ -478,20 +477,21 @@ interface PersonFactory<P extends Person> {
 public class FunctionalInterfaceDemo {
     public static void main(String[] args) {
 
-// Case 1.
+        // Case 1.
         Converter<String, Integer> converter = (from) -> Integer.valueOf(from); 
-				// This is a body to the convert function in the interface
-				// here we are providing that as a lambda expression 
+        // This is a body to the convert function in the interface
+        // here we are providing that as a lambda expression 
         Integer val = converter.convert("23");
         System.out.println("the value is = " + val);
-// Case 2.
-				// Or you also have a second choice, which is to reference a function method
-				// and this can be done using :: 
+        // Case 2.
+        // Or you also have a second choice, which is to reference a function method
+        // and this can be done using :: 
         Converter<String, Integer> converter2 = Integer::valueOf; // Integer is a Java builtin class and valueOf is a class method
         System.out.println(converter2.convert("28"));
 
-// Case 3.
-        Converter<String, String> something = Something::startWith; // reference to a self defined class method
+        // Case 3.
+        Converter<String, String> something = Something::startWith; 
+        // reference to a self defined class method
         System.out.println(something.convert("K"));
     
         /**
@@ -538,7 +538,7 @@ public class LambdaScopeDemo {
     public static void main(String[] args) {
         final int num = 1;
         Converter<Integer, String> stringConverter 
-												= (from) -> String.valueOf(from + num);
+                                                = (from) -> String.valueOf(from + num);
         System.out.println(stringConverter.convert(2));
         /**
          * Note that If you want to use any thing from the
@@ -560,35 +560,35 @@ public class LambdaScopeDemo {
 - A functional subroutine is similar to a java class, and it can be defined in a .java file, just like a class
 - However note that it’s just content is for a single subroutine
     
-    ```java
-    public interface FunctionR2R { 
-    		double valueAt(double x);
-    }
-    ```
+```java
+public interface FunctionR2R { 
+    double valueAt(double x);
+}
+```
     
 - The above code would be in the file named FunctionR2R.java
 - It specify a function called as valueAt with one param
 - Java also comes up with many standard functional interfaces. One of the most important and simple is Runnable, which is already define in `java.lang`
     
-    ```java
-      public interface Runnable {
-          public void run();
-      }
-    ```
-    
-    ```java
-    public class Main {
-    	public static void main(String[] args) {
-    		Runnable myRunnable = () -> { 
-    				for (int i = 0; i < 3; ++i) {
-    					System.out.println("hello from the runnable");
-    				}
-    		};
-    		Thread thread = new Thread(myRunnable);
-    		thread.start(); // run method of Runnable get executed once thread.start() get called
-    	}
+```java
+    public interface Runnable {
+        public void run();
     }
-    ```
+```
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Runnable myRunnable = () -> { 
+                for (int i = 0; i < 3; ++i) {
+                    System.out.println("hello from the runnable");
+                }
+        };
+        Thread thread = new Thread(myRunnable);
+        thread.start(); // run method of Runnable get executed once thread.start() get called
+    }
+}
+```
     
 - There are several other kind of interface in java, for now we will only focus on functional interfaces as they are important to understand the lambda function in Java
 - The name of functional interface is a type just like we have `int`, `String` e.g `Runnable myRunnable;`
@@ -625,45 +625,45 @@ sqrt = (z) -> z * z;
 
 - Things get more interested when you can use these lambda expression as an actual parameters, which is the most common use in practice
     
-    ```java
-    static double sum (FunctionR2R f, int start, int end) { 
-    		double total = 0; 
-    		for (int n = start; n <= end; ++n) { 
-    			total += f.valueAt(n); 
-    		} 
-    		return total; 
+```java
+static double sum (FunctionR2R f, int start, int end) { 
+    double total = 0; 
+    for (int n = start; n <= end; ++n) { 
+        total += f.valueAt(n); 
     } 
-    System.out.println(sum(x -> x *x, 1, 100)); 
-    System.out.println(sum(num -> Math.pow(2, num), 1, 10));
-    ```
+    return total; 
+} 
+System.out.println(sum(x -> x *x, 1, 100)); 
+System.out.println(sum(num -> Math.pow(2, num), 1, 10));
+```
     
 - Suppose that we have a subroutine that performs a given task several times. The task can be specified as a value of type Runnable
     
-    ```java
-    static void doSeveralTimes ( Runnable task, int repCounts ) { 
-    		for (int i = 0; i < repCount; ++i) { 
-    			task.run(); 
-    		} 
-    }
+```java
+static void doSeveralTimes ( Runnable task, int repCounts ) { 
+    for (int i = 0; i < repCount; ++i) { 
+        task.run(); 
+    } 
+}
     
-    doSeveralTimes(()-> System.out.println(“hello world!”), 10);
-    
-    doSeveralTimes(**()-> { 
-    		int count = 5 + (int) (21 * Math.random()); 
-    		for (int i = 1; i <= count; ++i) { 
-    				System.out.println(i + " "); 
-    		} 
-    		System.out.println(); }**, 
-    100);
-    ```
+doSeveralTimes(()-> System.out.println(“hello world!”), 10);
+
+doSeveralTimes(()-> { 
+    int count = 5 + (int) (21 * Math.random()); 
+    for (int i = 1; i <= count; ++i) { 
+            System.out.println(i + " "); 
+    } 
+    System.out.println(); }, 
+100);
+```
     
 - We can also return type as these lambda expression
     
-    ```java
-    static FunctionR2R makePowerFunction (int n) { 
-    	return x -> Math.pow(x, n); 
-    }
-    ```
+```java
+static FunctionR2R makePowerFunction (int n) { 
+    return x -> Math.pow(x, n); 
+}
+```
     
 - A functional interface has exactly one abstract method. Since default methods have an implementation, they are not abstract
 
@@ -673,30 +673,30 @@ sqrt = (z) -> z * z;
 - To be more precise, you have to have *exactly one* abstract method that **doesn’t** override a method in `java.lang.Object` in a functional interface.
 - ✅ Correct method
     
-    ```java
-    public interface Foo {
-    	public void something();
-    }
-    ```
+```java
+public interface Foo {
+    public void something();
+}
+```
     
 - ❌ Wrong way
     
-    ```java
-    public interface Foo {
-    	public void doSomething();
-    	public void domeSomethingElse():
-    }
-    ```
+```java
+public interface Foo {
+    public void doSomething();
+    public void domeSomethingElse():
+}
+```
     
 - But the below will give the compilation error
     
-    ```java
-    @FunctionalInterface 
-    public interface foo {
-    	public void doSomething();
-    	public void doSomethingElse();
-    }
-    ```
+```java
+@FunctionalInterface 
+public interface foo {
+    public void doSomething();
+    public void doSomethingElse();
+}
+```
     
 
 ### Method Reference
@@ -711,19 +711,19 @@ sqrt = (z) -> z * z;
     
 - **Static Method Reference**
     
-    ```java
-    ClassName::staticMethodName
-    // lambda expression
-    list.forEach(s -> System.out.println(s));
-    // method reference
-    list.forEach(System.out.println);
-    ```
+```java
+ClassName::staticMethodName
+// lambda expression
+list.forEach(s -> System.out.println(s));
+// method reference
+list.forEach(System.out.println);
+```
     
 - **Instance Method Reference**
     
-    ```java
-    list.forEach(someObject::someMethod);
-    ```
+```java
+list.forEach(someObject::someMethod);
+```
     
 
 ### APIs, Packages, Modules, and Javadoc
@@ -731,7 +731,7 @@ sqrt = (z) -> z * z;
 ```mermaid
 graph LR
   1[Sub-routine in <br> Java <br> <br> ] --grouped<br> by <br><br> --> 2[Classes<br>] -- grouped <br> by <br><br> --> 3[Packages <br><br>]
-	4[Package<br><br>] -- can <br> contains <br><br> --> 5[Sub-packages<br><br>]
+    4[Package<br><br>] -- can <br> contains <br><br> --> 5[Sub-packages<br><br>]
 
 ```
 
@@ -849,9 +849,9 @@ A class that is in package has an **automatic access** to other classes in the s
     @throws IllegalArgumentException if either the width or the height is a negative number.
     */
     public static double areaOfRectangle( double length, double width ) { 
-    		if ( width < 0 || height < 0 ) 
-    				throw new IllegalArgumentException(“Sides must have positive length.”); 
-    				double area; area = width * height; return area; 
+            if ( width < 0 || height < 0 ) 
+                    throw new IllegalArgumentException(“Sides must have positive length.”); 
+                    double area; area = width * height; return area; 
     }
     ```
     
@@ -916,12 +916,12 @@ A class that is in package has an **automatic access** to other classes in the s
     
     ```java
     public class Game { 
-    		static int count; // member variable 
-    		static void playGame() { 
-    				int count; // local variable . . 
-    			// Some statements to define playGame() . 
-    	} 
-    		// More variables and subroutines. . 
+            static int count; // member variable 
+            static void playGame() { 
+                    int count; // local variable . . 
+                // Some statements to define playGame() . 
+        } 
+            // More variables and subroutines. . 
     }
     ```
     
@@ -932,14 +932,14 @@ A class that is in package has an **automatic access** to other classes in the s
 📌 In Java, there is one exception, which might not be other language You can’t use the argument param or any local variable, declared even inside a nested loop
 
 ```java
-  void badSub(int y) {
-      int x;
-      while (y > 0) {
-              int x; // ERROR: x is already defined.
-              ...
-              ...
-      }
-  }
+void badSub(int y) {
+    int x;
+    while (y > 0) {
+        int x; // ERROR: x is already defined.
+        ...
+        ...
+    }
+}
 
  // The above is an ERROR in java
 ```
@@ -992,7 +992,6 @@ A class that is in package has an **automatic access** to other classes in the s
     
     <aside>
     📌  In Java, no variable can ever hold an object. A variable can only hold a reference to an object
-    
     </aside>
     
 - You should think of objects as floating around independently in the computer’s memory. In fact there is special portion of memory called as **heap**
@@ -1108,7 +1107,7 @@ System.out.println(list[1]);
     ```java
     Student[] classlist; classlist = new Student[30]; 
     for (int i = 0; i < 30; ++i) { 
-    		classlist[i] = new Student(); 
+            classlist[i] = new Student(); 
     }
     ```
     
@@ -1146,12 +1145,12 @@ System.out.println(list[1]);
     
     ```java
     public class PairOfDice {
-    	 public int die1; 
-    	 public int die2;
-    	 public PairOfDice(int val1, int val2) { 
-    			die1 = val1; 
-    			die2 = val2; 
-    	 }
+         public int die1; 
+         public int die2;
+         public PairOfDice(int val1, int val2) { 
+                die1 = val1; 
+                die2 = val2; 
+         }
     }
     ```
     
@@ -1173,7 +1172,7 @@ System.out.println(list[1]);
         
         ```java
         public Student { 
-        			private String name; private int ID;
+                    private String name; private int ID;
               private static int nextUniqueID = 0;
         
               Student (String theName) {
@@ -1223,9 +1222,9 @@ System.out.println(list[1]);
 ```mermaid
 graph LR
   1[Specification <br> of <br> problem <br><br>] --> 2[Analysis and Design <br> of program to <br> solve it <br><br>]
-	2 --> 3[Coding<br><br>]
-	3 --> 4[Testing <br> and <br> Debugging <br><br>]
-	4 --> 5[Maintenance <br><br>]
+    2 --> 3[Coding<br><br>]
+    3 --> 4[Testing <br> and <br> Debugging <br><br>]
+    4 --> 5[Maintenance <br><br>]
 ```
 
 - A large programming project goes through multiple stages
@@ -1249,8 +1248,8 @@ These all stages together are referred as the Software life cycle
 ```mermaid
 graph TD
   1(Vehicle) --> 2[Car<br><br>]
-	1 --> 3[Truck <br><br>]
-	1 --> 4[Motorcycle<br><br>]
+    1 --> 3[Truck <br><br>]
+    1 --> 4[Motorcycle<br><br>]
 ```
 
 - A class represents a set of objects which shares the same **structure** and **behaviour**
@@ -1342,27 +1341,27 @@ the both objects are same
     
     ```java
     class A {
-    	int a, b, c;
+        int a, b, c;
     
-    	**public void add(int x, int y)**
-    	{
-    		a = x;
-    		b = y;
-    		System.out.println("addition of a+b is:" + (a + b));
-    	}
+        **public void add(int x, int y)**
+        {
+            a = x;
+            b = y;
+            System.out.println("addition of a+b is:" + (a + b));
+        }
     
-    	**public void add(int x, int y, int z)**
-    	{
-    		a = x;
-    		b = y;
-    		c = z;
-    		System.out.println("addition of a+b+c is:" + (a + b + c));
-    	}
+        **public void add(int x, int y, int z)**
+        {
+            a = x;
+            b = y;
+            c = z;
+            System.out.println("addition of a+b+c is:" + (a + b + c));
+        }
     
-    	public void print()
-    	{
-    		System.out.println("Class A's method is running");
-    	}
+        public void print()
+        {
+            System.out.println("Class A's method is running");
+        }
     };
     ```
     
@@ -1408,10 +1407,10 @@ public class myClass extend Object { ...
         
         ```java
         public class Student { 
-        	private String name; 
-        	public Student(String name) { 
-        			this.name = name; 
-        	} 
+            private String name; 
+            public Student(String name) { 
+                    this.name = name; 
+            } 
         }
         ```
         
@@ -1435,10 +1434,10 @@ public class myClass extend Object { ...
     
     ```java
     public class GraphicalDice extends PairsOfDice { 
-    			public void roll() { 
-    				super.roll(); // same code call from the parent redraw(); 
-    			// additional feature 
-    	} 
+                public void roll() { 
+                    super.roll(); // same code call from the parent redraw(); 
+                // additional feature 
+        } 
     }
     ```
     
@@ -1524,12 +1523,12 @@ public class InterfaceDemo  {
     
     ```java
     public interface Strokeable { 
-    		public void stroke (GraphicalContext g); 
+            public void stroke (GraphicalContext g); 
     }
     public class Line implements Strokeable { 
-    		public void stroke (GraphicalContext g) { 
-    			… // do some implementation 
-    	} 
+            public void stroke (GraphicalContext g) { 
+                … // do some implementation 
+        } 
     }
     ```
     
@@ -1540,7 +1539,7 @@ public class InterfaceDemo  {
     
     ```java
     class FilledCircle extends Circle implements Strokeable, Fillable {
-    	// do something
+        // do something
     }
     ```
     
@@ -1558,9 +1557,9 @@ public class InterfaceDemo  {
     
     ```java
     public interface ConversionFactors { 
-    		int INCHES_PER_FOOT = 12; 
-    		int FEET_PER_YARD = 3; 
-    		int YARD_PER_MILE = 1760; 
+            int INCHES_PER_FOOT = 12; 
+            int FEET_PER_YARD = 3; 
+            int YARD_PER_MILE = 1760; 
     }
     ```
     
@@ -1640,12 +1639,12 @@ public class InterfaceDemo  {
     
     ```java
     public class OuterClass {
-    	private static int outerData = 10;
-    	static class NestedClass {
-    		void display() {
-    			System.out.println("data from the outer class" + outerData);
-    		}
-    	}
+        private static int outerData = 10;
+        static class NestedClass {
+            void display() {
+                System.out.println("data from the outer class" + outerData);
+            }
+        }
     }
     ```
     
@@ -1660,18 +1659,18 @@ public class InterfaceDemo  {
 
 ```java
 class Outer {
-	class Inner {
-		public void show() {
-			System.out.println("In a nested class method");
-		}
-	}
+    class Inner {
+        public void show() {
+            System.out.println("In a nested class method");
+        }
+    }
 }
 
 class Main {
-	public static void main(String[] args) {
-		Outer.Inner in = new Outer().new Inner();
-		in.show();
-	}
+    public static void main(String[] args) {
+        Outer.Inner in = new Outer().new Inner();
+        in.show();
+    }
 }
 ```
 
@@ -1693,22 +1692,22 @@ Method 1
 import java.util.*;
 
 class Demo {
-	void show() {
-		System.out.println("The is Demo class");
-	}
+    void show() {
+        System.out.println("The is Demo class");
+    }
 }
 
 class AnonymousClassExample {
-	static Demo d = new Demo() {
-		void show() {
-				super.show();
-				System.out.println("I am Anonymous class");
-		}
-	};
+    static Demo d = new Demo() {
+        void show() {
+                super.show();
+                System.out.println("I am Anonymous class");
+        }
+    };
 
-	public static void main(String[] args) {
-		d.show();
-	}
+    public static void main(String[] args) {
+        d.show();
+    }
 }
 
 /* Output
@@ -1721,18 +1720,18 @@ Method 2
 
 ```java
 interface Hello {
-	void show();
+    void show();
 }
 
 class AnonymousClassExample {
-	static Hello h = new Hello() {
-		public void show() {
-			System.out.println("I am an anonymous Class");
-		}
-	};
-	public static void main(String[] args) {
-		h.show();
-	}
+    static Hello h = new Hello() {
+        public void show() {
+            System.out.println("I am an anonymous Class");
+        }
+    };
+    public static void main(String[] args) {
+        h.show();
+    }
 }
 
 ```
@@ -1746,25 +1745,25 @@ class AnonymousClassExample {
     
     ```java
     class Outer {
-    		void outerMethod() {
-    				int x = 98;
-    				System.out.println("inside outerMethod");
-    				class Inner {
-    						void innerMethod() {
-    								System.out.println("x= " + x); 
-    								// allowed after JDK 1.8, before that it is not 
-    								// allowed to access non-final variable of outer method
-    						}
-    				}
-    				Inner y = new Inner();
-    				y.innerMethod();
-    		}
+            void outerMethod() {
+                    int x = 98;
+                    System.out.println("inside outerMethod");
+                    class Inner {
+                            void innerMethod() {
+                                    System.out.println("x= " + x); 
+                                    // allowed after JDK 1.8, before that it is not 
+                                    // allowed to access non-final variable of outer method
+                            }
+                    }
+                    Inner y = new Inner();
+                    y.innerMethod();
+            }
     }
     class MethodLocalVariableDemo {
-    		public static void main(String[] args) {
-    				Outer x=new Outer();
-    				x.outerMethod();
-    		}
+            public static void main(String[] args) {
+                    Outer x=new Outer();
+                    x.outerMethod();
+            }
     }
     ```
     
@@ -1786,10 +1785,10 @@ There are four type of access specifiers modifiers available in Java
     // Class Geek is having Default access modifier 
     class Geek 
     { 
-    	void display() 
-    	{ 
-    		System.out.println("Hello World!"); 
-    	} 
+        void display() 
+        { 
+            System.out.println("Hello World!"); 
+        } 
     }
     ```
     
@@ -1805,13 +1804,13 @@ There are four type of access specifiers modifiers available in Java
     // This class is having default access modifier 
     class GeekNew 
     { 
-    	public static void main(String args[]) 
-    	{ 
-    		// Accessing class Geek from package p1 
-    		Geek obj = new Geek(); 
+        public static void main(String args[]) 
+        { 
+            // Accessing class Geek from package p1 
+            Geek obj = new Geek(); 
     
-    		obj.display(); 
-    	} 
+            obj.display(); 
+        } 
     }
     ```
     
@@ -1824,9 +1823,9 @@ There are four type of access specifiers modifiers available in Java
         package p1;
         
         public class A {
-        	protected void display() {
-        		System.out.println("hi");
-        	}
+            protected void display() {
+                System.out.println("hi");
+            }
         }
         ```
         
@@ -1837,10 +1836,10 @@ There are four type of access specifiers modifiers available in Java
         import p1.*;
         
         class B extends A {
-        	public static void main(String[] args) {
-        		B obj = new B();
-        		obj.display();
-        	}
+            public static void main(String[] args) {
+                B obj = new B();
+                obj.display();
+            }
         }
         
         // output : hi
@@ -1858,15 +1857,15 @@ There are four type of access specifiers modifiers available in Java
             
             ```java
             class Test {
-            	static int a = 10;
-            	static int b;
-            	static {
-            		System.out.println("Static block init");
-            		b = a * 4;
-            	}
-            	public static void main(String[] args) {
-            		System.out.println("from main");
-            	}
+                static int a = 10;
+                static int b;
+                static {
+                    System.out.println("Static block init");
+                    b = a * 4;
+                }
+                public static void main(String[] args) {
+                    System.out.println("from main");
+                }
             }
             // output 
             // Static block init
@@ -1897,13 +1896,13 @@ There are four type of access specifiers modifiers available in Java
         
         ```java
         public class ThreadSafeCouter {
-        		private int count = 0;
-        		synchronized public void increment() {
-        				count = count + 1;
-        		}
-        		synchronized public void getValue() {
-        				return count;
-        		}
+                private int count = 0;
+                synchronized public void increment() {
+                        count = count + 1;
+                }
+                synchronized public void getValue() {
+                        return count;
+                }
         }
         ```
         
@@ -1923,7 +1922,7 @@ There are four type of access specifiers modifiers available in Java
     
     ```java
     class SharedObj {
-    	static int sharedVar = 6;
+        static int sharedVar = 6;
     }
     ```
     
@@ -1950,19 +1949,19 @@ There are four type of access specifiers modifiers available in Java
     
     ```java
     class Animal {
-    	public void eat() {
-    		System.out.println("I can eat");
-    	}
+        public void eat() {
+            System.out.println("I can eat");
+        }
     }
     
     class Dog extends Animal {
-    	@Override
-    	public void eat() {
-    		System.out.println("Dog can eat");
-    	}
-    	public void bark() {
-    		System.out.println("Dog is barking");
-    	}
+        @Override
+        public void eat() {
+            System.out.println("Dog can eat");
+        }
+        public void bark() {
+            System.out.println("Dog is barking");
+        }
     }
     
     ```
@@ -1974,7 +1973,7 @@ There are four type of access specifiers modifiers available in Java
     
     ```java
     abstract class Language {
-    	//
+        //
     }
     ```
     
@@ -2094,23 +2093,23 @@ Rules for the Abstract classes in Java
 
 ```java
 class Animal {
-	static class Mammal {
-		public void displayInfo() {
-			System.out.println("I am Mammal");
-		}
-	}
-	public void eat() {
-		System.out.println("Eating...");
-	}
+    static class Mammal {
+        public void displayInfo() {
+            System.out.println("I am Mammal");
+        }
+    }
+    public void eat() {
+        System.out.println("Eating...");
+    }
 }
 
 class Main {
-	public static void main(String[] args) {
-		Animal animal = new Animal();
-		Animal.Mammal mammal = new Animal.Mammal
-		mammal.displayInfo();
-	}
-	// mammal.eat() // is an error
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Animal.Mammal mammal = new Animal.Mammal
+        mammal.displayInfo();
+    }
+    // mammal.eat() // is an error
 }
 ```
 
@@ -2188,7 +2187,7 @@ class Main {
 import java.io.*:
 
 class Demo {
-	
+    
 }
 ```
 
@@ -2200,24 +2199,24 @@ class Demo {
     import java.lang.Cloneable;
     
     class A implements Cloneable {
-    	int i;
-    	String s;
-    	public A (int i, String s) {
-    		this.i = i;
-    		this.s = s;
-    	}
-    	@Override
-    	protected Object clone() throws CloneNotSupportedException {
-    		return super.clone();
-    	}
+        int i;
+        String s;
+        public A (int i, String s) {
+            this.i = i;
+            this.s = s;
+        }
+        @Override
+        protected Object clone() throws CloneNotSupportedException {
+            return super.clone();
+        }
     }
     
     public class Test {
-    	public static void main(String[] args) throws CloneNotSupportedException {
-    			A a = new A(20, "HI");
-    			A b = (A)a.clone();
-    			System.out.println(b.i);
-    	}
+        public static void main(String[] args) throws CloneNotSupportedException {
+                A a = new A(20, "HI");
+                A b = (A)a.clone();
+                System.out.println(b.i);
+        }
     }
     ```
     
@@ -2228,28 +2227,28 @@ class Demo {
         import java.io.*;
         
         class A implements Serializable {
-        	int i;
-        	String s;
-        	public A (int i, String s) {
-        		this.i = i;
-        		this.s = s;
-        	}
+            int i;
+            String s;
+            public A (int i, String s) {
+                this.i = i;
+                this.s = s;
+            }
         }
         
         public class Test {
-        	public static void main(String[] args) 
-        		throws IOException, ClassNotFoundException {
-        			A a = new A(20, "hi");
-        			FileOutputStream fos = new FileOutputStream("demo.dump");
-        			ObjectOutputStream oos = new ObjectOutputStream(fos);
-        			oos.writeObject(a);
-        			
-        			FileInputStream fis = new FileInputStream("demo.dump");
-        			ObjectInputStream ois = new ObjectInputStream(fis);
-        			A b = (A)ois.readObject();
-        			oos.close();
-        			ois.close();
-        	}
+            public static void main(String[] args) 
+                throws IOException, ClassNotFoundException {
+                    A a = new A(20, "hi");
+                    FileOutputStream fos = new FileOutputStream("demo.dump");
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+                    oos.writeObject(a);
+                    
+                    FileInputStream fis = new FileInputStream("demo.dump");
+                    ObjectInputStream ois = new ObjectInputStream(fis);
+                    A b = (A)ois.readObject();
+                    oos.close();
+                    ois.close();
+            }
         }
         ```
         
@@ -2263,7 +2262,7 @@ class Demo {
         import java.rmi.*;
         
         public interface Search extends Remote {
-        		public String query(Stirng search) throw RemoteException;
+                public String query(Stirng search) throw RemoteException;
         }
         ```
         
@@ -2276,11 +2275,11 @@ Graphics, Paining, Mouse events, timer & keyword events basic components, layout
 
 ```java
 for (String name: namelist) {
-		System.out.println(name);
+        System.out.println(name);
 }
 
 for (var item: itemArray) {
-	int[] intList = new int[10];
+    int[] intList = new int[10];
 }
 ```
 
@@ -2295,7 +2294,7 @@ for (var item: itemArray) {
     
     ```java
     for (int i = 0; i < number.length; ++i) { 
-    		sum = sum + number[i]; 
+            sum = sum + number[i]; 
     }
     
     int[] primes = {2, 3, 5, 7, 11, 13, 17, 19};
@@ -2362,17 +2361,17 @@ public class Main {
     import java.util.ArrayList;
     
     public class Main {
-    	public static void main() {
-    		ArrayList<String> myStrings = new ArrayList<>();
-    		myString.add("hello");
-    		myString.add("world");
-    		
-    		String firstString = myString.get(0);
-    		System.out.prinln("First string is " + firstString);
-    		for (String str: myString) {
-    			System.out.println(str);
-    		}
-    	}
+        public static void main() {
+            ArrayList<String> myStrings = new ArrayList<>();
+            myString.add("hello");
+            myString.add("world");
+            
+            String firstString = myString.get(0);
+            System.out.prinln("First string is " + firstString);
+            for (String str: myString) {
+                System.out.println(str);
+            }
+        }
     }
     ```
     
@@ -2426,7 +2425,7 @@ for (Double num: numbers) {
         public static void main(String[] args) {
             // Nested List
             // List is an interface, which is implemented by ArrayList, 
-    				// LinkedList, Stack, Vector, ..
+                    // LinkedList, Stack, Vector, ..
             List<List<Integer>> nestedList = new ArrayList<>();
             // Arrays is a class in java.util which provide static method like asList
             nestedList.add(Arrays.asList(1, 2, 3));
@@ -2437,7 +2436,7 @@ for (Double num: numbers) {
             Iterator<List<Integer>> outerIterator = nestedList.iterator();
             
             // On iterator you have two main method i.e next() 
-    				// -> returns the value
+                    // -> returns the value
             // hasNext() return boolean true or false 
             // Until outer iterator has next element
             while (outerIterator.hasNext()) {
@@ -2496,10 +2495,10 @@ for (Double num: numbers) {
     ```java
     // filepath: java.util.AbstractList<E>
     public abstract class AbstractList<E> extends 
-    				AbstractCollection<E> implements List<E> {
+                    AbstractCollection<E> implements List<E> {
     // add method in this file 
     public void add(int index, E element) {
-    	throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
     ```
     
@@ -2581,7 +2580,7 @@ int num = integerList.get(3).intValue();
     
     ```java
     public record Complex(double re, double im) {
-    	...
+        ...
     }
     public final static Complex one = new Complex(1, 0);
     ```
@@ -2644,21 +2643,21 @@ Correctness and Robustness - Problems in java, exception and try..catch, asserti
     
     ```java
     static in binarySearch(int[] A, int loIndex, int hiIndex, int value) {
-    	int (loIndex > hiIndex) {
-    		return -1;
-    	}
-    	else {
-    		int middle = (loIndex + hiIndex) / 2;
-    		if (value == A[middle]) {
-    			return middle;
-    		}
-    		else if (value < A[middle]) {
-    			return binarySearch(A, loIndex, middle - 1, value);
-    		}
-    		else {
-    			return binarySearch(A, middle + 1, hIndex, value); 
-    		}
-    	}
+        int (loIndex > hiIndex) {
+            return -1;
+        }
+        else {
+            int middle = (loIndex + hiIndex) / 2;
+            if (value == A[middle]) {
+                return middle;
+            }
+            else if (value < A[middle]) {
+                return binarySearch(A, loIndex, middle - 1, value);
+            }
+            else {
+                return binarySearch(A, middle + 1, hIndex, value); 
+            }
+        }
     }
     ```
     
@@ -2667,15 +2666,15 @@ Correctness and Robustness - Problems in java, exception and try..catch, asserti
 
 ```java
 class Node {
-	String item;
-	Node next;
+    String item;
+    Node next;
 }
 
 Node runner;
 runner = head;
 while (runner != null) {
-	process(runner.item);
-	runner = runner.next;
+    process(runner.item);
+    runner = runner.next;
 }
 ```
 
@@ -2684,29 +2683,29 @@ while (runner != null) {
 ```java
 private class StackOfInts { 
  private static class Node { 
-		int item; Node next; 
-	} private Node top;
-	
+        int item; Node next; 
+    } private Node top;
+    
  public void push(int N) {
-	    Node newTop;
-	    newTop = new Node();
-	    newTop.item = N;
-	    newTop.next = top;
-	    top = newTop;
-	}
-	
-	public int pop() {
-	    if (top == null) {
-	        throw new IllegalStateException("can't pop from an empty stack");
-	    }
-	    int topItem = top.item;
-	    top = top.next;
-	    return topItem;
-	}
-	
-	public boolean isEmpty() {
-	    return (top == null);
-	}
+        Node newTop;
+        newTop = new Node();
+        newTop.item = N;
+        newTop.next = top;
+        top = newTop;
+    }
+    
+    public int pop() {
+        if (top == null) {
+            throw new IllegalStateException("can't pop from an empty stack");
+        }
+        int topItem = top.item;
+        top = top.next;
+        return topItem;
+    }
+    
+    public boolean isEmpty() {
+        return (top == null);
+    }
 }
 ```
 
@@ -2718,24 +2717,24 @@ private class StackOfInts {
 
 ```java
 public class Box<T> {
-	private T value;
-	public Box (T value) {
-		this.value = value;
-	}
-	public T getValue() {
-		return this.value;	
-	}
-	public void setValue(T newValue) {
-		this.value = newValue;
-	}
+    private T value;
+    public Box (T value) {
+        this.value = value;
+    }
+    public T getValue() {
+        return this.value;    
+    }
+    public void setValue(T newValue) {
+        this.value = newValue;
+    }
 }
 
 public class Main {
-	public static void main(String[] args) {
-		Box<Integer> intBox = new Box<>(42);
-		int value = intBox.getValue();
-		Box<String> strBox = new Box<>("hello");
-	}
+    public static void main(String[] args) {
+        Box<Integer> intBox = new Box<>(42);
+        int value = intBox.getValue();
+        Box<String> strBox = new Box<>("hello");
+    }
 }
 ```
 
@@ -2743,12 +2742,12 @@ public class Main {
     
     ```java
     public class Utils {
-    	public static <T> void printArray(T[] arr) {
-    		for (T element: arr) {
-    			System.out.print(element + " ");
-    		}	
-    		System.out.println();
-    	}
+        public static <T> void printArray(T[] arr) {
+            for (T element: arr) {
+                System.out.print(element + " ");
+            }    
+            System.out.println();
+        }
     }
     ```
     
@@ -2786,25 +2785,25 @@ Table of Content -
     import java.io.FileOutputStream;
     
     public class ByteStream {
-    	public static void main(String[] args) [
-    		try {
-    			// writing to a file 
-    			FileOutputStream outputStream = new FileOutputStream("myFile.dat");
-    			byte[] data = {65, 66, 67, 68, 69}; // ASCII values for A, B, C, D, E
-    			outputStream.write(data);
-    			outputStream.close();
+        public static void main(String[] args) [
+            try {
+                // writing to a file 
+                FileOutputStream outputStream = new FileOutputStream("myFile.dat");
+                byte[] data = {65, 66, 67, 68, 69}; // ASCII values for A, B, C, D, E
+                outputStream.write(data);
+                outputStream.close();
     
-    			//Reading from the file
-    			FileInputStream inputStream = new FileInputStream("myFile.dat");
-    			int byteValue;
-    			while ((byteValue = inputStream.read()) != -1) {
-    				System.out.print((char)byteValue);
-    			}
-    			inputStream.close();
-    		} catch (IOException e) [
-    			e.printStackTrace();	
-    		}
-    	}
+                //Reading from the file
+                FileInputStream inputStream = new FileInputStream("myFile.dat");
+                int byteValue;
+                while ((byteValue = inputStream.read()) != -1) {
+                    System.out.print((char)byteValue);
+                }
+                inputStream.close();
+            } catch (IOException e) [
+                e.printStackTrace();    
+            }
+        }
     }
     ```
     
@@ -2818,20 +2817,20 @@ Table of Content -
         import java.io.FileWriter;
         
         public class CharacterStream {
-        	public static void main(String[] args) {
-        		FileWriter writer = new FileWriter("filename.txt");
-        		writer.write("hello this is a test");
-        		writer.close();
+            public static void main(String[] args) {
+                FileWriter writer = new FileWriter("filename.txt");
+                writer.write("hello this is a test");
+                writer.close();
         
-        		FileReader reader = new FileReader("filename.txt");
-        		int character;
-        		while ((character = reader.read()) != -1) {
-        			system.out.print((char)character);
-        		}
-        		reader.close();
-        	} catch (IOException e) {
-        		e.printStackTrace();	
-        	}
+                FileReader reader = new FileReader("filename.txt");
+                int character;
+                while ((character = reader.read()) != -1) {
+                    system.out.print((char)character);
+                }
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();    
+            }
         }
         ```
         
@@ -2848,21 +2847,21 @@ Table of Content -
 
 ```mermaid
 graph LR
-	 1[Byte Stream] <--(InputStreamReader & OutputStreamReader <br><br>)--> 2[Character Stream]
-	 3[Byte Stream] --Reading<br><br>--> 4[Character Stream]
-	 5[Character Stream] --Writing<br><br>--> 6[Byte Stream]
+     1[Byte Stream] <--(InputStreamReader & OutputStreamReader <br><br>)--> 2[Character Stream]
+     3[Byte Stream] --Reading<br><br>--> 4[Character Stream]
+     5[Character Stream] --Writing<br><br>--> 6[Byte Stream]
 ```
 
 ```mermaid
 graph BT
-	subgraph A
-		direction BT
-	  1[class::InputStreamReader<br><br>] --> 2[class::Reader]
-	end
-	subgraph B 
-		direction BT
-		3[class::OutputStreamReader<br><br>] --> 4[class::Writer]
-	end
+    subgraph A
+        direction BT
+      1[class::InputStreamReader<br><br>] --> 2[class::Reader]
+    end
+    subgraph B 
+        direction BT
+        3[class::OutputStreamReader<br><br>] --> 4[class::Writer]
+    end
 ```
 
 1. `InputStreamReader` inherited from Reader class
@@ -2872,22 +2871,22 @@ graph BT
     import java.io.*;
     
     public class InputStreamReaderExample {
-    	public static void main(String[] args) {
-    		try {
-    			// reading bytes
-    			FileInputStream fis = new FileInputStream("input.txt"); 
-    			// encoding 
-    			InputStreamReader isr = new InputStreamReader(fis, "UTF-8"); 
-    			int charCode;
-    			while ((charCode = isr.read()) != -1) {
-    				char character = (char) charCode;
-    				System.out.print(character);
-    			}			
-    			isr.close();
-    		} catch (IOException e) {
-    			e.printStackTrace();
-    		}
-    	}
+        public static void main(String[] args) {
+            try {
+                // reading bytes
+                FileInputStream fis = new FileInputStream("input.txt"); 
+                // encoding 
+                InputStreamReader isr = new InputStreamReader(fis, "UTF-8"); 
+                int charCode;
+                while ((charCode = isr.read()) != -1) {
+                    char character = (char) charCode;
+                    System.out.print(character);
+                }            
+                isr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
     ```
     
@@ -2926,14 +2925,14 @@ graph BT
         
         ```java
         try {
-        	PrintWriter write = new PrintWriter("output.txt");
-        	writer.println("");
-        	write.print();
-        	write.printf("Formated number %d", 42);
-        	write.close();
+            PrintWriter write = new PrintWriter("output.txt");
+            writer.println("");
+            write.print();
+            write.printf("Formated number %d", 42);
+            write.close();
         }
         catch (IOException e) {
-        	System.out.println("Something bad happen during input reading");
+            System.out.println("Something bad happen during input reading");
         }
         ```
         
@@ -2943,12 +2942,12 @@ graph BT
         import java.io.PrintWriter;
         
         public class PrintWriterExample {
-        	public static void main(String[] args) {
-        		PrintWriter writer = new PrintWriter(System.out);
-        		writer.println("Hello, World!");
-        		writer.printf("Formated number :%d", 42);
-        		writer.close();
-        	}
+            public static void main(String[] args) {
+                PrintWriter writer = new PrintWriter(System.out);
+                writer.println("Hello, World!");
+                writer.printf("Formated number :%d", 42);
+                writer.close();
+            }
         }
         ```
         
@@ -2959,16 +2958,16 @@ graph BT
         import java.io.FileWriter;
         
         public class PrintWriterExample {
-        	public static void main(String[] args) {
-        		try {
-        			PrintWriter writer 
-        					= new PrintWriter(new FileWriter("output.txt", append=true)));
-        			writer.println("Appending Text");
-        			writer.close();
-        		} catch (IOException e) {
-        			e.printStackTrace();
-        		}
-        	}
+            public static void main(String[] args) {
+                try {
+                    PrintWriter writer 
+                            = new PrintWriter(new FileWriter("output.txt", append=true)));
+                    writer.println("Appending Text");
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         ```
         
@@ -2997,22 +2996,22 @@ graph BT
         public static void main(String[] args) {
             try {
                 DataOutputStream dos = new DataOutputStream(
-    												new FileOutputStream("data.dat", false)
-    											);
+                                                    new FileOutputStream("data.dat", false)
+                                                );
                 dos.writeInt(42);
                 dos.writeDouble(3.14);
                 dos.writeUTF("Hello, world!");
                 dos.close();
     
                 DataInputStream dis = new DataInputStream(
-    														new FileInputStream("data.dat")
-    													);
+                                                            new FileInputStream("data.dat")
+                                                        );
                 int intValue = dis.readInt();
                 double doubleValue = dis.readDouble();
                 String stringValue = dis.readUTF();
                 dis.close();
                 System.out.println(intValue + " " + 
-    												doubleValue + " " + stringValue);
+                                                    doubleValue + " " + stringValue);
             
             } catch (IOException e) {
                 e.printStackTrace();
@@ -3025,14 +3024,14 @@ graph BT
     
     ```java
     try (DataOutputStream dos = new DataOutputStream(
-    															new FileOutputStream(filename)
-    														)) {
-    	dos.writeln(42);
-    	dos.writeUTF("hello, Data Streams!");
-    	dos.writeBoolean(true);
+                                                                new FileOutputStream(filename)
+                                                            )) {
+        dos.writeln(42);
+        dos.writeUTF("hello, Data Streams!");
+        dos.writeBoolean(true);
     }
     catch (Exception e) {
-    	e.printStackTrace();
+        e.printStackTrace();
     }
     ```
     
@@ -3048,19 +3047,19 @@ graph BT
 ```mermaid
 graph TD
   1((Input and Output <br><br>)) --> 2[Data Stream]
-	1 --> 3[File Stream]
-	2 --> 4[Data Input <br> Stream<br><br>]
-	2 --> 5[Data Output <br> Stream <br><br>]
-	3 --> 6[Character set <br> Data <br><br>]
-	3 --> 7[Byte <br> Data<br><br>]
-	7 --> 8[FileInputStream]
-	7 --> 9[FileOutputStream]
-	6 --> a[FileReader]
-	6 --> b[FileWriter]
-	1 --> c[PrintWriter<br>extends Writer<br><br>]
-	1 --> e[BufferReader<br>extends Reader<br><br>]
+    1 --> 3[File Stream]
+    2 --> 4[Data Input <br> Stream<br><br>]
+    2 --> 5[Data Output <br> Stream <br><br>]
+    3 --> 6[Character set <br> Data <br><br>]
+    3 --> 7[Byte <br> Data<br><br>]
+    7 --> 8[FileInputStream]
+    7 --> 9[FileOutputStream]
+    6 --> a[FileReader]
+    6 --> b[FileWriter]
+    1 --> c[PrintWriter<br>extends Writer<br><br>]
+    1 --> e[BufferReader<br>extends Reader<br><br>]
   1 --> d[Scanner]
-	
+    
 ```
 
 ### Buffered Reader (Reading Text)
@@ -3089,10 +3088,10 @@ graph TD
             } catch (IOException e) {
                 e.printStackTrace();
             }
-    				// Reading from the input stream 
+                    // Reading from the input stream 
             BufferedReader in = new BufferedReader(
-    																new InputStreamReader(System.in)
-    														);
+                                                                    new InputStreamReader(System.in)
+                                                            );
             try {
                 String line = in.readLine();
                 while (line != null) {
@@ -3137,7 +3136,7 @@ graph TD
             int age = scanner.nextInt();
     
             System.out.println("Your name is " + name + 
-    																" and your age : " + age);
+                                                                    " and your age : " + age);
             scanner.close();
         }
     }
@@ -3188,14 +3187,14 @@ graph TD
     import java.io.*;
     
     class Person implements Serializable { 
-    	private String name; 
-    	private int age; 
+        private String name; 
+        private int age; 
     }
     
     public class DataStreamExample {
-    	public static void main (String[] args) {
+        public static void main (String[] args) {
           try (**ObjectOutputStream** oos = new ObjectOutputStream(
-    										new FileOutputStream("data.txt")) {
+                                            new FileOutputStream("data.txt")) {
               Person person = new Person("John Doe", 30);
               oos.writeObject(person);
           }
@@ -3203,7 +3202,7 @@ graph TD
               e.printStackTrace();
           }
           try (**ObjectInputStream** ois = new ObjectInputStream(
-    												new FileInputStream("data.txt")) {
+                                                    new FileInputStream("data.txt")) {
               Person restoredPerson = (Person) ois.readObject();
               System.out.println("Name: " + restoredPerson.getName());
           }
@@ -3237,10 +3236,10 @@ graph TD
     ```java
     FileReader data;
     try {
-    	data = new FileReader("data.txt");
+        data = new FileReader("data.txt");
     }
     catch (FileNotFoundException e) {
-    	...
+        ...
     }
     ```
     
@@ -3250,10 +3249,10 @@ graph TD
     ```java
     Scanner BufferedReader data;
     try {
-    	data = new BufferedReader(new FileReader("data.dat"));
+        data = new BufferedReader(new FileReader("data.dat"));
     }
     catch (FileNotFoundException e) {
-    	... // handle the exception
+        ... // handle the exception
     }
     ```
     
@@ -3294,21 +3293,21 @@ graph TD
     ArrayList number;
     number = new ArrayList();
     try {
-    	data = new Scanner(new File("data.dat"));
+        data = new Scanner(new File("data.dat"));
     }
     catch (FileNotFoundException e) {
-    	System.out.println("Can't find the file");
-    	return;
+        System.out.println("Can't find the file");
+        return;
     }
     
     try {
-    	result = new PrintWriter("result.dat");
+        result = new PrintWriter("result.dat");
     }
     catch (FileNotFoundException e) {
-    	System.out.println("Can't open file results.data!");
-    	System.out.println("Error : " + e);
-    	data.close();
-    	return;
+        System.out.println("Can't open file results.data!");
+        System.out.println("Error : " + e);
+        data.close();
+        return;
     }
     
     // using java try-with-resource
@@ -3363,7 +3362,7 @@ graph TD
     import java.util.Scanner;
     
     public class DirectoryList { 
-    	public static void main(String[] args) { 
+        public static void main(String[] args) { 
             String directoryName;  
             String[] files; 
             Scanner scanner = new Scanner(System.in);
@@ -3495,8 +3494,8 @@ public class NetworkingExample {
 
             if (contentType == null || contentType.startsWith("text")) {
                 BufferedReader in = new BufferedReader(
-																			new InputStreamReader(urlData)
-																		);
+                                                                            new InputStreamReader(urlData)
+                                                                        );
                 while (true) {
                     String line = in.readLine();
                     if (line == null) {
@@ -3647,22 +3646,22 @@ It’s the ability to two devices to exchange data bidirectionally over a networ
                 while (true) {
                     Socket clientSocket = serverSocket.accept();
                     System.out.println("Connection established with " 
-    																			+ clientSocket.getInetAddress());
+                                                                                + clientSocket.getInetAddress());
                     
                     BufferedReader reader = new BufferedReader(
-    																					new InputStreamReader(
-    																						clientSocket.getInputStream()
-    																					), 
-    																					8192
-    																				); // size of buffer is 8192
+                                                                                        new InputStreamReader(
+                                                                                            clientSocket.getInputStream()
+                                                                                        ), 
+                                                                                        8192
+                                                                                    ); // size of buffer is 8192
                     String message = reader.readLine();
     
                     PrintWriter writer = new PrintWriter(
-    																		clientSocket.getOutputStream(), 
-    																		true, 
-    																		StandardCharsets.UTF_8);
+                                                                            clientSocket.getOutputStream(), 
+                                                                            true, 
+                                                                            StandardCharsets.UTF_8);
                     writer.println("Reply To Client:: Server received: " 
-    															+ message);
+                                                                + message);
                     clientSocket.close();
                 }
             } catch (IOException e) {
@@ -3688,13 +3687,13 @@ It’s the ability to two devices to exchange data bidirectionally over a networ
             try {
                 Socket socket = new Socket("127.0.0.1", 8080);
                 BufferedReader reader = new BufferedReader(
-    																				new InputStreamReader(
-    																					socket.getInputStream()
-    																				), 
-    																				8192
-    																		);
+                                                                                    new InputStreamReader(
+                                                                                        socket.getInputStream()
+                                                                                    ), 
+                                                                                    8192
+                                                                            );
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(), 
-    																			true, StandardCharsets.UTF_8);
+                                                                                true, StandardCharsets.UTF_8);
                 String message = "Hello, Server!";
                 writer.println(message);
                 String response = reader.readLine();
@@ -3715,13 +3714,13 @@ It’s the ability to two devices to exchange data bidirectionally over a networ
     
     ```java
     try { 
-    		ServerSocket server = new ServerSocket(8080); 
-    		while (true) { 
-    				Socket connection = server.accept(); 
-    				provideService(connection); 
-    		} 
+            ServerSocket server = new ServerSocket(8080); 
+            while (true) { 
+                    Socket connection = server.accept(); 
+                    provideService(connection); 
+            } 
     } catch (IOException e) { 
-    		System.out.println(“Server shut down with error” + e); 
+            System.out.println(“Server shut down with error” + e); 
     }
     ```
     
@@ -3797,7 +3796,7 @@ It’s the ability to two devices to exchange data bidirectionally over a networ
             NamedRunnable thread = new NamedRunnable("sourav");
             thread.run();
             Thread greetingThread = new Thread(() -> 
-    															System.out.println("This is lambda thread"));
+                                                                System.out.println("This is lambda thread"));
             greetingThread.start();
         }
     }
@@ -3822,17 +3821,17 @@ public static class CountPrimesThread extends Thread {
 
       }
 
-			public static void main(String[] args) {
-		      int numberOfThreads = 10;
-		      CountPrimeThread[] workers = new CountPrimeThread[numberOfThreads];
-		      for (int i = 0; i < numberOfThread; ++i) {
-		          worker[i] = new CountPrimeThread(i);
-		      }
-		      for (int i = 0; i < numberOfThread; ++i) {
-		          worker[i].start();
-		      }
-		      System.out.println("Threads have been created and started");
-		  }
+            public static void main(String[] args) {
+              int numberOfThreads = 10;
+              CountPrimeThread[] workers = new CountPrimeThread[numberOfThreads];
+              for (int i = 0; i < numberOfThread; ++i) {
+                  worker[i] = new CountPrimeThread(i);
+              }
+              for (int i = 0; i < numberOfThread; ++i) {
+                  worker[i].start();
+              }
+              System.out.println("Threads have been created and started");
+          }
 }
 
 ```
@@ -3856,9 +3855,9 @@ long startTime = System.currentTimeMillis();
     
     ```java
     try {
-    	Thread.sleep(lengthOfPause);
+        Thread.sleep(lengthOfPause);
     } catch (InterruptedException e) {
-    	e.printStackTrace();
+        e.printStackTrace();
     }
     ```
     
@@ -3952,13 +3951,13 @@ long elapsedTime = System.currentTimeMillis() - startTime;
     
     ```java
     public class ThreadSafeCouter {
-    		private int count = 0;
-    		synchronized public void increment() {
-    				count = count + 1;
-    		}
-    		synchronized public void getValue() {
-    				return count;
-    		}
+            private int count = 0;
+            synchronized public void increment() {
+                    count = count + 1;
+            }
+            synchronized public void getValue() {
+                    return count;
+            }
     }
     ```
     
@@ -3974,7 +3973,7 @@ long elapsedTime = System.currentTimeMillis() - startTime;
     
     ```java
     if (tsc.getValue() == 10) {
-    		doSomething();
+            doSomething();
     }
     ```
     
@@ -3983,9 +3982,9 @@ long elapsedTime = System.currentTimeMillis() - startTime;
     
     ```java
     synchronized(tsc) {
-    		if (tsc.getValue() == 10) {
-    				doSomething();
-    		}
+            if (tsc.getValue() == 10) {
+                    doSomething();
+            }
     }
     ```
     
@@ -4043,7 +4042,7 @@ long elapsedTime = System.currentTimeMillis() - startTime;
     ```mermaid
     graph TD
       1[Synchronization] --> 2[Volatile Variables]
-    	1 --> 3[Atomic Varaibles]
+        1 --> 3[Atomic Varaibles]
     ```
     
 - Two other such techniques
@@ -4172,13 +4171,13 @@ private class WorkerThread extends Thread {
             setPriority(Thread.currentThread().getPriority() - 1);
         }
         catch (Exception e) {
-					// do something
+                    // do something
         }
         try {
             setDaemon(true);
         }
         catch (Exception e) {
-						// do something
+                        // do something
         }
         start(); // thread starts as soon as object get constructed;
     }
@@ -4293,7 +4292,7 @@ for (Future<Integer> res: results) {
                 lock.wait();
             }
             catch (InterruptedException e) {
-    						e.printStackTrace();
+                            e.printStackTrace();
             }
         }
         useResults = sharedResults;
@@ -4361,25 +4360,25 @@ for (Future<Integer> res: results) {
     import java.util.concurrent.locks.*;
     
     public class ReentrantLockExample {
-    	private final ReentrantLock lock = new ReentrantLock();
-    	public void performTask() {
-    		lock.lock();
-    		try {
-    				performSubTasks();
-    		}
-    		finally {
-    			lock.unlock();
-    		}
-    	}
-    	public void performSubTask() {
-    		lock.lock();
-    		try {
-    			// do something
-    		}
-    		finally {
-    			lock.unlock();
-    		}
-    	}
+        private final ReentrantLock lock = new ReentrantLock();
+        public void performTask() {
+            lock.lock();
+            try {
+                    performSubTasks();
+            }
+            finally {
+                lock.unlock();
+            }
+        }
+        public void performSubTask() {
+            lock.lock();
+            try {
+                // do something
+            }
+            finally {
+                lock.unlock();
+            }
+        }
     }
     ```
     
@@ -4407,19 +4406,19 @@ for (Future<Integer> res: results) {
 ```mermaid
 graph TD;
   subgraph A
-		a[list <br> Queue <br> Set <br> <br>] --e--> collection --e--> Iterable 
-	end
-	subgraph B
-		cr((ArrayList </br> LinkedList </br> Vector <br><br>)) --i--> List
-	end
+        a[list <br> Queue <br> Set <br> <br>] --e--> collection --e--> Iterable 
+    end
+    subgraph B
+        cr((ArrayList </br> LinkedList </br> Vector <br><br>)) --i--> List
+    end
 
-	subgraph C
-		1[Dequeue] --e--> 2[Priority </br> Queue <br><br>] --i--> 3[Queue]
-	end
+    subgraph C
+        1[Dequeue] --e--> 2[Priority </br> Queue <br><br>] --i--> 3[Queue]
+    end
 
-	subgraph D
-		e[TreeSet] --i--> j[Sorted Set<br>] --e--> k[HashSet <br> LinkedHashSet<br><br>] --**i**--> l[Set]
-	end
+    subgraph D
+        e[TreeSet] --i--> j[Sorted Set<br>] --e--> k[HashSet <br> LinkedHashSet<br><br>] --**i**--> l[Set]
+    end
 
 ```
 
@@ -4428,12 +4427,12 @@ graph TD;
 ```mermaid
 graph TD
   1(Object<br><br>) --> 2(Throwable)
-	2 --> 3(Exception <br><br>)
-	2 --> 4(Error)
-	3 --> 5[Checked Exception]
-	3 --> 6[Uncheked Exception]
-	4 --> 7[Virtual Machine Error]
-	4 --> 8[Assertion Error]
+    2 --> 3(Exception <br><br>)
+    2 --> 4(Error)
+    3 --> 5[Checked Exception]
+    3 --> 6[Uncheked Exception]
+    4 --> 7[Virtual Machine Error]
+    4 --> 8[Assertion Error]
 ```
 
 ### Checked Exceptions
@@ -4564,19 +4563,19 @@ graph TD
 ```java
 **// CustomException.java**
 public class ClassException extends Exceptions {
-	public CustomException (String message) {
-		super(message);
-	}
+    public CustomException (String message) {
+        super(message);
+    }
 }
 **// main.java**
 public class Main {
-	public static void main(String[] args) {
-		 try {
-				throw new CustomException("this is a custom exception");
-		 } catch (CustomException e) {
-				System.out.println(e.getMessage());
-		 }
-	}
+    public static void main(String[] args) {
+         try {
+                throw new CustomException("this is a custom exception");
+         } catch (CustomException e) {
+                System.out.println(e.getMessage());
+         }
+    }
 }
 ```
 
@@ -4599,33 +4598,33 @@ public class Main {
         // Java program to demonstrate working of throws
         class ThrowsExecp {
         
-        	static void fun() throws IllegalAccessException
-        	{
-        		System.out.println("Inside fun(). ");
-        		throw new IllegalAccessException("demo");
-        	}
+            static void fun() throws IllegalAccessException
+            {
+                System.out.println("Inside fun(). ");
+                throw new IllegalAccessException("demo");
+            }
         
-        	public static void main(String args[])
-        	{
-        		try {
-        			fun();
-        		}
-        		catch (IllegalAccessException e) {
-        			System.out.println("caught in main.");
-        		}
-        	}
+            public static void main(String args[])
+            {
+                try {
+                    fun();
+                }
+                catch (IllegalAccessException e) {
+                    System.out.println("caught in main.");
+                }
+            }
         }
         ```
         
         ```java
         // Java program to illustrate throws
         class tst {
-        	public static void main(String[] args)
-        		throws InterruptedException
-        	{
-        		Thread.sleep(10000);
-        		System.out.println("Hello Geeks");
-        	}
+            public static void main(String[] args)
+                throws InterruptedException
+            {
+                Thread.sleep(10000);
+                System.out.println("Hello Geeks");
+            }
         }
         ```
         
@@ -4637,76 +4636,76 @@ public class Main {
 - The main purpose of having final is to clean down all the resources
 - Resource leakage thus can be avoided
     
-    ```java
-    class A {
-    	static void A() {
-    		try {
-    			System.out.println("inside A");
-    			throw new RuntimeException("demo");
-    		}
-    		finally {
-    			System.out.println("A's  final");
-    		}
-    	}
-    
-    	static void B() {
-    		try {
-    			System.out.println("inside B");
-    			return;
-    		}
-    		finally {
-    			System.out.println("B's  final");
-    		}
-    	}
-    	
-    	public static void main(String args[]) {
-    		try {
-    				A();
-    		}
-    		catch (Exception e) {
-    				System.out.println("Exception caught");
-    		}
-    		B();
-    	}
+```java
+class A {
+    static void A() {
+        try {
+            System.out.println("inside A");
+            throw new RuntimeException("demo");
+        }
+        finally {
+            System.out.println("A's  final");
+        }
+    }
+
+    static void B() {
+        try {
+            System.out.println("inside B");
+            return;
+        }
+        finally {
+            System.out.println("B's  final");
+        }
     }
     
-    /* Output 
-    inside A
-    A's finally
-    Exception caught
-    inside B
-    B's finally
-    */
-    ```
-    
-    ```java
-    import java.io.FileWriter;
-    import java.io.IOException;
-    import java.io.PrintWriter;
-    
-    class K {
-    	private static final int SIZE = 10;
-    	public static void main(String[] args) {
-    		PrintWriter out = null;
-    		try {
-    			System.out.println("Entered try statement");
-    			out = new PrintWriter(new FileWriter("outfile.txt"));
-    		}
-    		catch (IOException e) {
-    			
-    		}
-    		finally {
-    			if (out != null) {
-    					System.out.println("Closing PrintWriter");
-    					out.close();
-    			}
-    			else {
-    					System.out.println("PrintWriter not open");
-    			}
-    		}
-    	}
+    public static void main(String args[]) {
+        try {
+            A();
+        }
+        catch (Exception e) {
+            System.out.println("Exception caught");
+        }
+        B();
     }
-    ```
+}
+    
+/* Output 
+inside A
+A's finally
+Exception caught
+inside B
+B's finally
+*/
+```
+    
+```java
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+class K {
+    private static final int SIZE = 10;
+    public static void main(String[] args) {
+        PrintWriter out = null;
+        try {
+            System.out.println("Entered try statement");
+            out = new PrintWriter(new FileWriter("outfile.txt"));
+        }
+        catch (IOException e) {
+            
+        }
+        finally {
+            if (out != null) {
+                System.out.println("Closing PrintWriter");
+                out.close();
+            }
+            else {
+                System.out.println("PrintWriter not open");
+            }
+        }
+    }
+}
+```
     
 
 ### Finalize Method in Java
@@ -4737,21 +4736,20 @@ Earlier finally was the here, but finalize we don’t require
 - Only when garbage collector call then this will get destroy
 - Also note this will be called only with the object
     
-    ```java
-    class Hello {
-    	public static void main(String[] args) {
-    		String s = new String("RR");
-    		s = null;
-    		System.gc();
-    		System.out.println("Main completes");
-    	}
-    	// overiding
-    	public void finalize() {
-    		System.out.println("finalize method overridden");
-    	}
+```java
+class Hello {
+    public static void main(String[] args) {
+        String s = new String("RR");
+        s = null;
+        System.gc();
+        System.out.println("Main completes");
     }
-    ```
-    
+    // overiding
+    public void finalize() {
+        System.out.println("finalize method overridden");
+    }
+}
+```
 
 ### Assertion Errors
 
@@ -5095,8 +5093,8 @@ Resource - [https://blog.jamesdbloom.com/JVMInternals.html](https://blog.jamesdb
     
     ```mermaid
     graph LR
-    	1[New Object<br> are created into <br> young generation<br><br>] --> 2[Minor Garbage collection <br> will operate in young generation<br> Objects that are<br>still alive will be<br>moved from eden space<br>to the survivor space<br><br><br>]
-    	2 --> 3[Major Garbage Collection<br>Pause the application thread to pause<br> Move object between <br> generation i.e from young <br> to Old generation<br><br><br>]
+        1[New Object<br> are created into <br> young generation<br><br>] --> 2[Minor Garbage collection <br> will operate in young generation<br> Objects that are<br>still alive will be<br>moved from eden space<br>to the survivor space<br><br><br>]
+        2 --> 3[Major Garbage Collection<br>Pause the application thread to pause<br> Move object between <br> generation i.e from young <br> to Old generation<br><br><br>]
       3 --> 4[Permanent Generation is collected <br> every time old generation<br> is collected <br> collected when they are full<br><br><br>]
     
     ```
@@ -5110,9 +5108,9 @@ Resource - [https://blog.jamesdbloom.com/JVMInternals.html](https://blog.jamesdb
     ```mermaid
     graph TD
       1[Non-Heap Memory<br><br>] --> 2[Permanent Generation]
-    	1 --> 3[Code Cache]
-    	2 --> 4[The Method Area]
-    	2 --> 5[Interned Strings<br><br>]
+        1 --> 3[Code Cache]
+        2 --> 4[The Method Area]
+        2 --> 5[Interned Strings<br><br>]
     ```
     
 
@@ -5153,26 +5151,26 @@ Resource - [https://blog.jamesdbloom.com/JVMInternals.html](https://blog.jamesdb
 
 ### Class File Structure
 
-A complied class file consists of the following structures
+- A complied class file consists of the following structures
 
 ```java
 ClassFile {
-    u4			magic;
-    u2			minor_version;
-    u2			major_version;
-    u2			constant_pool_count;
-    cp_info		contant_pool[constant_pool_count – 1];
-    u2			access_flags;
-    u2			this_class;
-    u2			super_class;
-    u2			interfaces_count;
-    u2			interfaces[interfaces_count];
-    u2			fields_count;
-    field_info		fields[fields_count];
-    u2			methods_count;
-    method_info		methods[methods_count];
-    u2			attributes_count;
-    attribute_info	attributes[attributes_count];
+    u4            magic;
+    u2            minor_version;
+    u2            major_version;
+    u2            constant_pool_count;
+    cp_info        contant_pool[constant_pool_count – 1];
+    u2            access_flags;
+    u2            this_class;
+    u2            super_class;
+    u2            interfaces_count;
+    u2            interfaces[interfaces_count];
+    u2            fields_count;
+    field_info        fields[fields_count];
+    u2            methods_count;
+    method_info        methods[methods_count];
+    u2            attributes_count;
+    attribute_info    attributes[attributes_count];
 }
 ```
 
@@ -5218,178 +5216,171 @@ ClassFile {
     1. Provides Dynamic array in Java
     2. Size grows and shrink automatically 
     
-    **Method in ArrayList**
+**Method in ArrayList**
     
-    ```java
-    import java.util.ArrayList;
-    import java.util.Iterator;
-    import java.io.*;
-    
-    public class ArrayListDemo {
-    	public static void main(String[] args) {
-    		ArrayList<Integer> arrlist = new ArrayList<Integer>(5);
-    		
-    		// Method 1 : ADD
-    		arrlist.add(15); //  add 
-    		arrlist.add(3, 15); // index, element : throws IndexOutOfBoundsException 
-    		
-    		// Method 2 : REMOVE
-    		arrlist.remove(1); // index of element
-    		arrlist.remove(Integer.valueOf(15)); // go to remove the value, 
-    															// don't use Integer(5) - this is depreciated
-    		
-    		//  using interator to remove 
-    		// While iterating use the below method i.e itr.remove(), safer 
-    		Iterator itr = arrlist.iterator();
-    		while (itr.hasNext()) {
-    			int x = (Integer) itr.next();
-    			if (x < 10) {
-    				itr.remove();
-    			}
-    		}
-    		
-    		// Method 3 : SET
-    		arrlist.set(idx, val);
-    		
-    		// Method 4: Contains
-    		arrlist.contains(value);
-    		
-    		// Using streams on the list
-    		List<Integer> newList = arrlist.stream().distinct().collect(Collector.toList());
-    
-    		// Method 5: GET
-    		Integer val = arrlist.get(index);
-    		
-    		Collections.sort(arrlist);
-    
-    		
-    		for (Integer number: arrlist) {
-    			System.out.println("number = " + number);
-    		}
-    	}
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.io.*;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> arrlist = new ArrayList<Integer>(5);
+        
+        // Method 1 : ADD
+        arrlist.add(15); //  add 
+        arrlist.add(3, 15); // index, element : throws IndexOutOfBoundsException 
+        
+        // Method 2 : REMOVE
+        arrlist.remove(1); // index of element
+        arrlist.remove(Integer.valueOf(15)); 
+        // go to remove the value, 
+        // don't use Integer(5) - this is depreciated
+        
+        // using interator to remove 
+        // While iterating use the below method i.e itr.remove(), safer 
+        Iterator itr = arrlist.iterator();
+        while (itr.hasNext()) {
+            int x = (Integer) itr.next();
+            if (x < 10) {
+                itr.remove();
+            }
+        }
+        // Method 3 : SET
+        arrlist.set(idx, val);
+        // Method 4: Contains
+        arrlist.contains(value);
+        // Using streams on the list
+        List<Integer> newList = arrlist.stream().distinct().collect(Collector.toList());
+        // Method 5: GET
+        Integer val = arrlist.get(index);
+        Collections.sort(arrlist);        
+        for (Integer number: arrlist) {
+            System.out.println("number = " + number);
+        }
     }
-    ```
+}
+```
     
 2. **LinkedList**
     
     
 3. **Vector**
     
-    How Does Vector class looks like ? 
+How Does Vector class looks like ? 
+
+```java
+public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+```
+
+Constructor for the Vector
+
+```java
+Vector<E> v = new Vector<E>(); // default vector with initial capacity = 10
+Vector<E> v = new Vector<E> (int size); // user-defined size
+Vector<E> v = new Vector<E> (int size, int incr); // increment when resize upward is required
+Vector<E> v = new Vector<E> (Collection c) 
+```
+
+Time complexity - $O(n)$ and Space complexity $O(n)$
     
-    ```java
-    public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
-    ```
-    
-    Constructor for the Vector
-    
-    ```java
-    Vector<E> v = new Vector<E>(); // default vector with initial capacity = 10
-    Vector<E> v = new Vector<E> (int size); // user-defined size
-    Vector<E> v = new Vector<E> (int size, int incr); // increment when resize upward is required
-    Vector<E> v = new Vector<E> (Collection c) 
-    ```
-    
-    Time complexity - $O(n)$ and Space complexity $O(n)$
-    
-    ```java
-    import java.util.Vector;
-    
-    public class VectorDemo {
-    		public static void main(String[] args) {
-    				Vector<String> newV = new Vector<String>();
-    				// add(index: int, value: E) method 
-    				newV.add("HI"); // add(index, value);
-    				newV.add("NOW");
-    				// get(index: int) method 
-    				newV.get(index);
-    				
-    				// addAll(Collection c) method 
-    				Collection<String> c = new ArrayList<String>();
-    				c.add("hi");
-    				newV.addAll(c); 
-    
-    				// addElement() method is used to append to end by increasing the size of
-    				// vector by 1, return boolean 
-    				newV.addElement("last");
-    
-    				// capacity() method
-    				int size = newV.capacity();
-    
-    				// clear() method
-    				newV.clear();
-    
-    				// clone() method
-    				Object copy_vector = newV.clone();
-    
-    				// contains() method
-    				newV.contains("hi");
-    
-    				// for each on vector
-    				newV.forEach((n) -> System.out.println(n));
-    				newV.forEach((n) -> print(n));
-    			
-    
-    		}
+```java
+import java.util.Vector;
+
+public class VectorDemo {
+    public static void main(String[] args) {
+        Vector<String> newV = new Vector<String>();
+        // add(index: int, value: E) method 
+        newV.add("HI"); // add(index, value);
+        newV.add("NOW");
+        // get(index: int) method 
+        newV.get(index);
+        
+        // addAll(Collection c) method 
+        Collection<String> c = new ArrayList<String>();
+        c.add("hi");
+        newV.addAll(c); 
+
+        // addElement() method is used to append to end by increasing the size of
+        // vector by 1, return boolean 
+        newV.addElement("last");
+
+        // capacity() method
+        int size = newV.capacity();
+
+        // clear() method
+        newV.clear();
+
+        // clone() method
+        Object copy_vector = newV.clone();
+
+        // contains() method
+        newV.contains("hi");
+
+        // for each on vector
+        newV.forEach((n) -> System.out.println(n));
+        newV.forEach((n) -> print(n));
+        
+
     }
-    ```
+}
+```
     
-    **Stream in Java**
+**Stream in Java**
     
-    ```java
-    
-    import java.util.Vector;
-    import java.util.stream.Collectors;
-    import java.util.stream.Stream;
-    import java.util.List;
-    import java.util.Random;
-    
-    public class StreamDemo {
-        public static void main(String[] args) {
-            Vector<Integer> vec = new Vector<Integer>();
-            Random random = new Random();
-            final int MAX_LIMIT = 10;
-            for (int i = 0; i < 6; ++i) {
-                vec.add(random.nextInt(MAX_LIMIT));
-            }
-            Stream<Integer> stream = vec.stream();
-            stream.forEach((v) -> System.out.println(v));
-            // after this stream get close()
-            try {
-                stream.forEachOrdered((v) -> System.out.println(v));
-            } catch (IllegalStateException e) {
-                System.out.println("Something bad happen!");
-                e.getMessage();
-            }
-    
-            System.out.println("All even numbers ");
-            vec.stream()
-                    .filter(val -> val % 2 == 0)
-                    .forEach(System.out::println);
-    
-            System.out.println("Square of each number");
-            vec.stream()
-                    .map(val -> val * val)
-                    .forEach(System.out::println);
-    
-            long count = vec.stream().count();
-            System.out.println("Total number of element = " + count);
-    
-            System.out.println("list from the vector");
-            List<Integer> newList = vec.stream().collect(Collectors.toList());
-            newList.forEach(val -> System.out.println(val));
-    
-            System.out.println("Distinct element only");
-            vec.stream().distinct().forEach(System.out::println);
-            System.out.println("limit the printing");
-            vec.stream().limit(2).forEach(System.out::println);
-            System.out.println("Skip the two element");
-            vec.stream().skip(2).forEach(System.out::println);
-            System.out.println("Sort the element");
-            vec.stream().sorted().forEach(System.out::println);
+```java
+import java.util.Vector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.List;
+import java.util.Random;
+
+public class StreamDemo {
+    public static void main(String[] args) {
+        Vector<Integer> vec = new Vector<Integer>();
+        Random random = new Random();
+        final int MAX_LIMIT = 10;
+        for (int i = 0; i < 6; ++i) {
+            vec.add(random.nextInt(MAX_LIMIT));
         }
+        Stream<Integer> stream = vec.stream();
+        stream.forEach((v) -> System.out.println(v));
+        // after this stream get close()
+        try {
+            stream.forEachOrdered((v) -> System.out.println(v));
+        } catch (IllegalStateException e) {
+            System.out.println("Something bad happen!");
+            e.getMessage();
+        }
+
+        System.out.println("All even numbers ");
+        vec.stream()
+                .filter(val -> val % 2 == 0)
+                .forEach(System.out::println);
+
+        System.out.println("Square of each number");
+        vec.stream()
+                .map(val -> val * val)
+                .forEach(System.out::println);
+
+        long count = vec.stream().count();
+        System.out.println("Total number of element = " + count);
+
+        System.out.println("list from the vector");
+        List<Integer> newList = vec.stream().collect(Collectors.toList());
+        newList.forEach(val -> System.out.println(val));
+
+        System.out.println("Distinct element only");
+        vec.stream().distinct().forEach(System.out::println);
+        System.out.println("limit the printing");
+        vec.stream().limit(2).forEach(System.out::println);
+        System.out.println("Skip the two element");
+        vec.stream().skip(2).forEach(System.out::println);
+        System.out.println("Sort the element");
+        vec.stream().sorted().forEach(System.out::println);
     }
-    ```
+}
+```
     
 4. Stack
 5. AbstractList
