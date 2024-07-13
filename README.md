@@ -5675,7 +5675,15 @@ public @interface myMetadata {
     - modify which fields are used by annotating them with `@EqualsAndHashCode.Include` or `@EqualsAndHashCode.Exclude`
   - `@Data` - `@Getter` + `@Setter` + `@ToString` + `@EqualsAndHashCode` + `@RequiredArgsConstructor`
     - includes getter for all fields and setters for all non-final field
-    - `@Data` annotation automatically adds getters (`getName()`, `getAge()`), setters (`setName()`, `setAge()`), `toString()`, `equals()`, `hashCode()`, and a no-argument constructor to the Person class. 
+    - `@Data` annotation automatically adds getters (`getName()`, `getAge()`), setters (`setName()`, `setAge()`), `toString()`, `equals()`, `hashCode()`, and a no-argument constructor to the Person class
+  - `@Log` - lombok automatically adds static final `log` field, initialized as required by our logging library
+    - lombok provides an annotation for every popular logging frameworks
+    - `@CommonsLog`, `@Flogger`, `@JBossLog`, `@Log`, `@Log4j`, `@Log4j2`, `@Slf4j`, `@XSlf4j`
+  - `@Builder` 
+    - develop builder object allowing us to create object by following step-by-step construction pattern
+      - Eg : `Author.builder().id("1").name("Maria").surname("Williams").build();`
+    - instead of using constructors with many parameters, this is a more readable approach
+    - Eg: by annotating the `Author` class, an `AuthorBuilder` class will be automatically generated
 
 - Spring Framework Annotations
   - `@Autowired`: Injects dependencies automatically.
