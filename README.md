@@ -1,3 +1,168 @@
+- [Java](#java)
+  - [Topic 1: Programming in the Small I:](#topic-1-programming-in-the-small-i)
+    - [Naming in Java](#naming-in-java)
+    - [Basic Datatypes in Java](#basic-datatypes-in-java)
+    - [System Class in Java](#system-class-in-java)
+    - [System.in In Java](#systemin-in-java)
+    - [System.out in Java](#systemout-in-java)
+    - [String Class](#string-class)
+    - [ENUMS (Enumerated Types) in JAVA](#enums-enumerated-types-in-java)
+    - [Text Input and Output](#text-input-and-output)
+    - [Programming Environment](#programming-environment)
+    - [**Java Development Kit (JDK)**](#java-development-kit-jdk)
+    - [Command Line Environment](#command-line-environment)
+    - [The Problem of Packages](#the-problem-of-packages)
+  - [Topic 2: - Blocks, Loops, Branches, if, switch and exceptions](#topic-2---blocks-loops-branches-if-switch-and-exceptions)
+    - [Blocks and Loops](#blocks-and-loops)
+    - [Topic 3: - Subroutine, parameters, return - API, Packages, and Javadoc - Program design (precondition, post-condition)](#topic-3---subroutine-parameters-return---api-packages-and-javadoc---program-design-precondition-post-condition)
+    - [Static subroutines and Static variables](#static-subroutines-and-static-variables)
+    - [**Global and Local variables**](#global-and-local-variables)
+    - [Lambda Expressions](#lambda-expressions)
+    - [Function Interfaces](#function-interfaces)
+    - [Method Reference](#method-reference)
+    - [APIs, Packages, Modules, and Javadoc](#apis-packages-modules-and-javadoc)
+    - [Using classes from the packages](#using-classes-from-the-packages)
+    - [About modules in JAVA](#about-modules-in-java)
+    - [Javadoc](#javadoc)
+    - [Static Import](#static-import)
+    - [Declaring variable with var](#declaring-variable-with-var)
+    - [Named Constants (final keyword)](#named-constants-final-keyword)
+    - [Naming and Scope Rules](#naming-and-scope-rules)
+  - [Topic4: - Object and classes](#topic4---object-and-classes)
+    - [Topics to cover](#topics-to-cover)
+    - [Object and classes](#object-and-classes)
+    - [Object, classes and instances](#object-classes-and-instances)
+    - [Fundamentals of Objects](#fundamentals-of-objects)
+    - [Static Factory Method vs Objects](#static-factory-method-vs-objects)
+    - [Getters and Setters](#getters-and-setters)
+    - [Arrays and Objects](#arrays-and-objects)
+    - [Constructor and Object Initialization](#constructor-and-object-initialization)
+    - [Garbage Collection (TODO : GKCS)](#garbage-collection-todo--gkcs)
+    - [Programming With Objects](#programming-with-objects)
+    - [Object Oriented Analysis and Design (OOAAD)](#object-oriented-analysis-and-design-ooaad)
+    - [Inheritance, Polymorphism and Abstract Class](#inheritance-polymorphism-and-abstract-class)
+    - [Singleton Class in Java](#singleton-class-in-java)
+    - [Polymorphism](#polymorphism)
+    - [Abstract Class](#abstract-class)
+    - [Final method and classes](#final-method-and-classes)
+    - [This and Super](#this-and-super)
+    - [Super and This as Constructor](#super-and-this-as-constructor)
+    - [Interfaces](#interfaces)
+    - [Defining and Implementing Interfaces](#defining-and-implementing-interfaces)
+    - [Default Methods](#default-methods)
+    - [Interfaces AS Types](#interfaces-as-types)
+    - [Auto Closeable Interface](#auto-closeable-interface)
+    - [Nested Classes](#nested-classes)
+    - [Static Nested Class (TODO)](#static-nested-class-todo)
+    - [Nested Inner Class](#nested-inner-class)
+    - [Anonymous Inner Class](#anonymous-inner-class)
+    - [Method Local Inner Class](#method-local-inner-class)
+    - [Access Modifiers in Java (Four)](#access-modifiers-in-java-four)
+    - [Non-access Modifiers in Java](#non-access-modifiers-in-java)
+    - [General OOPs concept in Java](#general-oops-concept-in-java)
+    - [Java Inheritance](#java-inheritance)
+    - [Abstract Class in Java](#abstract-class-in-java)
+    - [Abstract Keyword in Java](#abstract-keyword-in-java)
+    - [Wrapper Classes in Java](#wrapper-classes-in-java)
+    - [Java Nested Static Class](#java-nested-static-class)
+    - [Throwable Class in Java](#throwable-class-in-java)
+    - [Marker Interfaces in Java](#marker-interfaces-in-java)
+  - [Topic 5 - GUI part](#topic-5---gui-part)
+  - [Topic 6: - Array, Dynamic array, linked list, searching, sorting, multi-dimensional arrays](#topic-6---array-dynamic-array-linked-list-searching-sorting-multi-dimensional-arrays)
+    - [**Variable Arity Methods**](#variable-arity-methods)
+    - [**Array Processing**](#array-processing)
+    - [**Dynamic Arrays**](#dynamic-arrays)
+    - [**Parameterized Types in Java with example of ArrayList**](#parameterized-types-in-java-with-example-of-arraylist)
+    - [Programming  with ArrayList](#programming--with-arraylist)
+    - [Two Dimensional List and ArrayLists](#two-dimensional-list-and-arraylists)
+    - [Interface \& Classes - ArrayList, List, AbstractList and Arrays.asList()](#interface--classes---arraylist-list-abstractlist-and-arraysaslist)
+    - [Wrapper Class](#wrapper-class)
+    - [**Auto boxing** in Java](#auto-boxing-in-java)
+    - [Record](#record)
+    - [Searching and Sorting](#searching-and-sorting)
+    - [Two Dimensional Arrays](#two-dimensional-arrays)
+  - [Topic 7: CORRECTNESS AND ROBUSTNESS -](#topic-7-correctness-and-robustness--)
+  - [Topic 8: Linked List and Recursion](#topic-8-linked-list-and-recursion)
+    - [Recursion](#recursion)
+    - [Linked List](#linked-list)
+    - [Stack](#stack)
+  - [Topic 9: Generic Programming and Collection classes (TODO)](#topic-9-generic-programming-and-collection-classes-todo)
+  - [Topic 10: I/O Stream, Files and Networking](#topic-10-io-stream-files-and-networking)
+    - [Character and Byte Stream](#character-and-byte-stream)
+    - [Print Writer](#print-writer)
+    - [Data Streams](#data-streams)
+    - [Difference between Data Streams and File Streams](#difference-between-data-streams-and-file-streams)
+    - [Buffered Reader (Reading Text)](#buffered-reader-reading-text)
+    - [The Scanner Class](#the-scanner-class)
+    - [Serialize Object I/O](#serialize-object-io)
+    - [File - A persistent storage](#file---a-persistent-storage)
+    - [General Scenario:: Scanner for read and PrintWriter and write](#general-scenario-scanner-for-read-and-printwriter-and-write)
+    - [Files and Directories](#files-and-directories)
+    - [Programming with Files](#programming-with-files)
+    - [Persistent Data](#persistent-data)
+    - [Network](#network)
+    - [URLs AND URLConnection](#urls-and-urlconnection)
+    - [TCP/IP and Client-server architecture](#tcpip-and-client-server-architecture)
+    - [Two way communication in TCP/IP](#two-way-communication-in-tcpip)
+    - [Socket in Java](#socket-in-java)
+  - [Topic 11 - Thread and Multiprocessing](#topic-11---thread-and-multiprocessing)
+    - [Creating and Running Threads](#creating-and-running-threads)
+    - [Operation on Threads](#operation-on-threads)
+    - [Volatile variables](#volatile-variables)
+    - [Atomic Variables](#atomic-variables)
+    - [Programming with Threads](#programming-with-threads)
+    - [Threads vs Timers](#threads-vs-timers)
+    - [Recursion in Threads](#recursion-in-threads)
+    - [Threads for background computation](#threads-for-background-computation)
+    - [Threads for multiprocessing](#threads-for-multiprocessing)
+    - [Threads and parallel processing](#threads-and-parallel-processing)
+    - [Problem Decomposition](#problem-decomposition)
+    - [Thread pool and tasks queues](#thread-pool-and-tasks-queues)
+    - [The Executive Service approach](#the-executive-service-approach)
+    - [Wait and Notify](#wait-and-notify)
+    - [Threads and Networking](#threads-and-networking)
+    - [ReEntrant Lock in Java](#reentrant-lock-in-java)
+    - [The Blocking I/O Problem](#the-blocking-io-problem)
+    - [An Asynchronous Network Chat program](#an-asynchronous-network-chat-program)
+    - [Hierarchy of Collection framework](#hierarchy-of-collection-framework)
+  - [Topic 12 - Exceptions in Java](#topic-12---exceptions-in-java)
+    - [Checked Exceptions](#checked-exceptions)
+    - [Unchecked Exceptions](#unchecked-exceptions)
+    - [User Creating Exceptions](#user-creating-exceptions)
+    - [Throw and Throws in Java (TODO)](#throw-and-throws-in-java-todo)
+    - [Finally in Java](#finally-in-java)
+    - [Finalize Method in Java](#finalize-method-in-java)
+    - [Assertion Errors](#assertion-errors)
+    - [Virtual Machine Error](#virtual-machine-error)
+  - [Topic 13: Java Virtual Machine Architecture](#topic-13-java-virtual-machine-architecture)
+    - [Class Loader Subsystem](#class-loader-subsystem)
+    - [JVM Memory](#jvm-memory)
+    - [Execution Engine](#execution-engine)
+    - [Java Native Interface (JNI)](#java-native-interface-jni)
+  - [Topic 14: Software Automation Tools for Java](#topic-14-software-automation-tools-for-java)
+    - [Gradle](#gradle)
+    - [Maven](#maven)
+    - [What is `archtype:generate` means ?](#what-is-archtypegenerate-means-)
+    - [**Run the Application**](#run-the-application)
+    - [**What is an Artifact in Maven project ?**](#what-is-an-artifact-in-maven-project-)
+    - [Local Maven Repository](#local-maven-repository)
+    - [Main Directory in the Java project](#main-directory-in-the-java-project)
+    - [Package Hierarchy in Java](#package-hierarchy-in-java)
+  - [Topic 15 - JVM Internals](#topic-15---jvm-internals)
+    - [JVM System Threads](#jvm-system-threads)
+    - [Per Thread](#per-thread)
+    - [Shared between Threads](#shared-between-threads)
+    - [Memory Management](#memory-management)
+    - [Non-Heap Memory](#non-heap-memory)
+    - [Just In Time compilation](#just-in-time-compilation)
+    - [Method Area](#method-area)
+    - [Class File Structure](#class-file-structure)
+  - [Topic 16 : Java Collection](#topic-16--java-collection)
+    - [Collection Framework](#collection-framework)
+    - [List Interfaces](#list-interfaces)
+  - [Topic 17. Extras (decide name later)](#topic-17-extras-decide-name-later)
+    - [Annotation](#annotation)
+
 # Java
 
 Garbage info - Inventor - James Gosling, First name OAK (from tree), and java since the Iceland is covered with coffee seeds
@@ -5018,9 +5183,6 @@ java -cp target/first-app-in-maven-1.0-SNAPSHOT.jar com.oracle.App // say If App
     - Packages also play a role in access control.
     - Classes in the same package have default access to each other's members, even if they are not public.
 
-## Annotation in Java
-
-[https://www.programiz.com/java-programming/annotations](https://www.programiz.com/java-programming/annotations) 
 
 ## Topic 15 - JVM Internals
 
@@ -5385,3 +5547,528 @@ public class StreamDemo {
 4. Stack
 5. AbstractList
 6. AbstractSequentialList
+
+
+## Topic 17. Extras (decide name later)
+
+### Annotation
+- Resources
+  - [https://www.programiz.com/java-programming/annotations](https://www.programiz.com/java-programming/annotations) 
+
+- In java `@inteface` keyword is used to declare an annotation type 
+- Annotation provides the metadata about a program that can be inspected at the runtime using reflection 
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface myMetadata {
+    String index();
+    boolean local() default false;
+}
+```
+
+- `@Retention` 
+  - Specify when annotation is available to use 
+  - `RetentionPolicy.SOURCE`
+    - Only in the source code and are discarded during compilation
+    - Use case: compile-time checks, code generation and other preprocessing tasks
+    - Example: `@Override` - Override method of superclass
+  - `RetentionPolicy.CLASS` 
+    - Recorded in the class file, but not retained by the JVM at runtime 
+    - They are in bytecode but can't be access during runtime using Reflection
+    - Use case: Annotations used by tools and libraries that process class files, such as bytecode manipulation tools.
+    - Default retention policy if not specified
+  - `RetentionPolicy.RUNTIME`
+    - Retained by JVM and also accessible during runtime using reflection 
+    - Used for runtime processing
+    - Use case:  Dependency injection framework 
+    - Example: `@Deprecated`, custom annotations
+    
+    ```java
+
+    // Example 1.
+
+    import java.lang.annotation.Retention;
+    import java.lang.annotation.RetentionPolicy;
+
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface RuntimeLevelAnnotation {
+        String value();
+    }
+
+
+    @RuntimeLevelAnnotation(value = "example")
+    public class ExampleClass {
+        public static void main(String[] args) {
+            Class<ExampleClass> clazz = ExampleClass.class;
+            
+            if (clazz.isAnnotationPresent(RuntimeLevelAnnotation.class)) {
+                RuntimeLevelAnnotation annotation = clazz.getAnnotation(RuntimeLevelAnnotation.class);
+                System.out.println("Value: " + annotation.value()); // output: example
+            }
+        }
+    }
+
+    ```
+
+- `@Target`
+  - Annotation in Java
+  - This tells where an annotation type can be applied 
+  - Examples: 
+    - `ElementType.FIELD`, `ElementType.METHOD`, `ElementType.PARAMETER`, `CONSTRUCTOR`, `LOCAL_VARIABLE`,... and many more
+
+    ```java
+
+    // Example 1.
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.METHOD)
+    public @interface MyMethodAnnotation {
+        String value() default "default value";
+    }
+
+    public class MyClass {
+        @MyMethodAnnotation(value = "Hello")
+        public void myMethod() {
+            // Method implementation
+        }
+    }
+
+    // Example 2: 
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    public @interface MyFieldAnnotation {
+        String description() default "No description";
+    }
+
+    public class MyClass {
+        @MyFieldAnnotation(description = "This is a field")
+        private String myField;
+    }
+
+    // Example 3.
+
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.PARAMETER)
+    public @interface MyParameterAnnotation {
+        String value() default "default";
+    }
+
+    public class MyClass {
+        public void myMethod(@MyParameterAnnotation("param value") String param) {
+        }
+    }
+    ```
+
+- More on annotation
+  - `@NoArgsConstructor` - Generate no-argument constructor 
+    - Init value to their default values
+  - `@Data` - Includes getter and setters for all fields and setters for all non-final field
+    - `@Data` annotation automatically adds getters (`getName()`, `getAge()`), setters (`setName()`, `setAge()`), `toString()`, `equals()`, `hashCode()`, and a no-argument constructor to the Person class. 
+
+- Spring Framework Annotations
+  - `@Autowired`: Injects dependencies automatically.
+    ```java
+    import org.springframework.beans.factory.annotation.Autowired;
+
+    public class MyService {
+        @Autowired
+        private MyRepository repository;
+        
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Autowired` automatically injects an instance of `MyRepository` into the `repository` field when `MyService` is instantiated, facilitating dependency injection in Spring applications.
+
+  - `@Component`: Marks a class as a Spring component.
+    ```java
+    import org.springframework.stereotype.Component;
+
+    @Component
+    public class MyComponent {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Component` marks `MyComponent` as a Spring-managed component, allowing it to be automatically detected and instantiated by Spring's component scanning mechanism.
+
+  - `@RequestMapping`: Maps HTTP requests to handler methods.
+    ```java
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RestController;
+    import org.springframework.web.bind.annotation.RequestMethod;
+
+    @RestController
+    @RequestMapping("/api")
+    public class MyController {
+        @RequestMapping(value = "/endpoint", method = RequestMethod.GET)
+        public String handleRequest() {
+            // Method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@RequestMapping` maps HTTP GET requests to the `/api/endpoint` URL path to the `handleRequests()` method, allowing it to process and respond to HTTP requests.
+
+  - `@Transactional`: Defines the scope of a database transaction.
+    ```java
+    import org.springframework.transaction.annotation.Transactional;
+
+    @Transactional
+    public class MyService {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Transactional` ensures that all methods of `MyService` are executed within a single database transaction, managing transactional boundaries and ensuring data integrity.
+
+- JUnit Annotations
+  - `@Test`: Marks a method as a test method.
+    ```java
+    import org.junit.Test;
+
+    public class MyTest {
+        @Test
+        public void testMethod() {
+            // Test method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@Test` marks `testMethod()` as a unit test method, allowing JUnit to identify and execute it as part of test runs, verifying expected behavior and outcomes.
+
+  - `@Before`: Executed before each test method.
+    ```java
+    import org.junit.Before;
+
+    public class MyTest {
+        @Before
+        public void setUp() {
+            // Setup method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@Before` ensures that `setUp()` method is executed before each `@Test` method, providing a consistent setup environment for tests, initializing necessary resources or state.
+
+  - `@After`: Executed after each test method.
+    ```java
+    import org.junit.After;
+
+    public class MyTest {
+        @After
+        public void tearDown() {
+            // Teardown method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@After` ensures that `tearDown()` method is executed after each `@Test` method, performing cleanup tasks, releasing resources, or resetting state post-test execution.
+
+  - `@BeforeClass`: Executed once before any test method in the class.
+    ```java
+    import org.junit.BeforeClass;
+
+    public class MyTest {
+        @BeforeClass
+        public static void setUpClass() {
+            // Class setup method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@BeforeClass` ensures that `setUpClass()` method is executed once before any `@Test` method in the class, performing class-level setup tasks, initializing shared resources, or setting up test data.
+
+  - `@AfterClass`: Executed once after all test methods in the class.
+    ```java
+    import org.junit.AfterClass;
+
+    public class MyTest {
+        @AfterClass
+        public static void tearDownClass() {
+            // Class teardown method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@AfterClass` ensures that `tearDownClass()` method is executed once after all `@Test` methods in the class, performing class-level cleanup tasks, releasing shared resources, or finalizing test data.
+
+- Hibernate/JPA Annotations
+  - `@Entity`: Marks a class as an entity mapped to a database table.
+    ```java
+    import javax.persistence.Entity;
+    import javax.persistence.Id;
+
+    @Entity
+    public class User {
+        @Id
+        private Long id;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Entity` marks `User` as an entity class, mapping it to a database table. The `@Id` annotation specifies `id` as the primary key of the table.
+
+  - `@Id`: Specifies the primary key of an entity.
+    ```java
+    import javax.persistence.Id;
+
+    public class User {
+        @Id
+        private Long id;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Id` specifies that `id` is the primary key of the `User` entity, allowing Hibernate/JPA to identify and manage instances of `User` in the database.
+
+  - `@GeneratedValue`: Defines the strategy for generating primary keys.
+    ```java
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+    import javax.persistence.Id;
+
+    public class User {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@GeneratedValue` specifies that the value of `id` is automatically generated by the database (using an identity column), ensuring unique and sequential primary key values for `User` entities.
+
+  - `@Column`: Maps a field or property to a column in the database.
+    ```java
+    import javax.persistence.Column;
+    import javax.persistence.Entity;
+    import javax.persistence.Id;
+
+    @Entity
+    public class User {
+        @Id
+        private Long id;
+
+        @Column(name = "username", nullable = false)
+        private String username;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Column` maps the `username` field to a column named `username` in the database table for `User`. Additional attributes like `nullable` specify constraints on the column.
+
+- Jackson Annotations (for JSON Processing)
+  - `@JsonProperty`: Maps a field name in Java to a JSON property name.
+    ```java
+    import com.fasterxml.jackson.annotation.JsonProperty;
+
+    public class User {
+        @JsonProperty("user_name")
+        private String username;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@JsonProperty` maps the `username` field in Java to a JSON property named `user_name` during serialization and deserialization with Jackson, allowing customization of JSON field names.
+
+  - `@JsonIgnore`: Ignores a field or method during serialization and deserialization.
+    ```java
+    import com.fasterxml.jackson.annotation.JsonIgnore;
+
+    public class User {
+        private String password;
+
+        @JsonIgnore
+        public String getPassword() {
+            return password;
+        }
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@JsonIgnore` excludes the `getPassword()` method from being serialized to JSON or deserialized from JSON, ensuring sensitive information like passwords is not exposed.
+
+  - `@JsonFormat`: Configures the format of dates and times during serialization and deserialization.
+    ```java
+    import com.fasterxml.jackson.annotation.JsonFormat;
+
+    public class Event {
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+        private Date eventDate;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@JsonFormat` specifies the format (`"yyyy-MM-dd HH:mm:ss"`) for serializing and deserializing `eventDate` field of `Event` class to and from JSON, ensuring consistent date/time representation.
+
+- Servlet Annotations
+  - `@WebServlet`: Declares a servlet component.
+    ```java
+    import javax.servlet.annotation.WebServlet;
+    import javax.servlet.http.HttpServlet;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+    import java.io.IOException;
+
+    @WebServlet(name = "MyServlet", urlPatterns = "/myservlet")
+    public class MyServlet extends HttpServlet {
+        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+            // Servlet logic
+        }
+    }
+    ```
+    - **Explanation**: `@WebServlet` registers `MyServlet` as a servlet component in the web application, handling HTTP GET requests to `/myservlet` URL pattern with the logic defined in `doGet()` method.
+
+  - `@WebFilter`: Declares a filter component.
+    ```java
+    import javax.servlet.annotation.WebFilter;
+    import javax.servlet.*;
+
+    @WebFilter(filterName = "MyFilter", urlPatterns = "/*")
+    public class MyFilter implements Filter {
+        public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+            // Filter logic
+            chain.doFilter(request, response);
+        }
+    }
+    ```
+    - **Explanation**: `@WebFilter` declares `MyFilter` as a filter component applied to all URL patterns (`"/*"`) in the web application, allowing custom processing of HTTP requests and responses.
+
+  - `@WebListener`: Declares a listener component.
+    ```java
+    import javax.servlet.annotation.WebListener;
+    import javax.servlet.ServletContextEvent;
+    import javax.servlet.ServletContextListener;
+
+    @WebListener
+    public class MyServletContextListener implements ServletContextListener {
+        public void contextInitialized(ServletContextEvent sce) {
+            // Initialization logic
+        }
+
+        public void contextDestroyed(ServletContextEvent sce) {
+            // Cleanup logic
+        }
+    }
+    ```
+    - **Explanation**: `@WebListener` registers `MyServletContextListener` as a listener component in the web application, allowing execution of initialization (`contextInitialized()`) and cleanup (`contextDestroyed()`) logic during application startup and shutdown phases.
+
+- Java EE and Jakarta EE Annotations
+  - `@Stateless`: Marks a session bean as stateless.
+    ```java
+    import javax.ejb.Stateless;
+
+    @Stateless
+    public class MyStatelessBean {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Stateless` annotates `MyStatelessBean` as a stateless session bean in Java EE or Jakarta EE, ensuring that each method invocation is independent of previous invocations, suitable for stateless business logic.
+
+  - `@Stateful`: Marks a session bean as stateful.
+    ```java
+    import javax.ejb.Stateful;
+
+    @Stateful
+    public class MyStatefulBean {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Stateful` marks `MyStatefulBean` as a stateful session bean, allowing it to maintain conversational state across multiple client invocations, suitable for scenarios requiring state retention between method calls.
+
+  - `@Singleton`: Marks a session bean as a singleton.
+    ```java
+    import javax.ejb.Singleton;
+
+    @Singleton
+    public class MySingletonBean {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Singleton` declares `MySingletonBean` as a singleton session bean, ensuring that only one instance exists per container, suitable for managing shared resources or caching data across multiple clients.
+
+  - `@Resource`: Specifies a resource (e.g., data source, JMS queue) to be injected.
+    ```java
+    import javax.annotation.Resource;
+    import javax.jms.Queue;
+
+    public class MyJmsService {
+        @Resource(mappedName = "jms/myQueue")
+        private Queue queue;
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Resource` injects the JMS `myQueue` resource into `queue` field of `MyJmsService`, allowing access to the specified resource (e.g., data source, message queue) configured in the application server or context.
+
+- Swagger Annotations (for API Documentation)
+  - `@Api`: Adds metadata to describe the API class.
+    ```java
+    import io.swagger.annotations.Api;
+
+    @Api(value = "UserController", description = "REST APIs related to User entity")
+    public class UserController {
+        // Class implementation
+    }
+    ```
+    - **Explanation**: `@Api` annotates `UserController` to provide metadata about REST APIs related to the User entity, facilitating comprehensive documentation and understanding of API endpoints and operations.
+
+  - `@ApiOperation`: Describes an operation (HTTP method) in the API.
+    ```java
+    import io.swagger.annotations.ApiOperation;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.RestController;
+
+    @RestController
+    public class UserController {
+
+        @ApiOperation(value = "Get a list of all users", response = User.class, responseContainer = "List")
+        @GetMapping("/users")
+        public List<User> getUsers() {
+            // Method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@ApiOperation` documents `getUsers()` method as an HTTP GET operation to retrieve a list of all users, specifying `User` class as the response type in a collection (`List`), aiding in API documentation and usage clarity.
+
+  - `@ApiParam`: Describes a parameter in an operation.
+    ```java
+    import io.swagger.annotations.ApiParam;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.RequestParam;
+    import org.springframework.web.bind.annotation.RestController;
+
+    @RestController
+    public class UserController {
+
+        @ApiOperation(value = "Get user by ID")
+        @GetMapping("/users/{id}")
+        public User getUserById(
+                @ApiParam(value = "User ID", required = true) @RequestParam("id") Long userId) {
+            // Method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@ApiParam` specifies `userId` as a parameter in `getUserById()` method for retrieving a user by ID, documenting its description ("User ID") and mandatory requirement (`required = true`), enhancing API documentation and parameter understanding.
+
+- Guava Annotations
+  - `@Nullable`: Indicates that a parameter, return value, or field can be `null`.
+    ```java
+    import javax.annotation.Nullable;
+
+    public class UserService {
+        public void updateUser(@Nullable User user) {
+            // Method implementation
+        }
+    }
+    ```
+    - **Explanation**: `@Nullable` annotates `user` parameter of `updateUser()` method to indicate that it can accept `null` values, providing clarity about its potential nullability and ensuring robust handling of nullable inputs.
+
+  - `@Immutable`: Marks a class as immutable (its state cannot be changed after construction).
+    ```java
+    import com.google.common.annotations.Immutable;
+
+    @Immutable
+    public class ImmutableUser {
+        private final String name;
+        private final int age;
+
+        public ImmutableUser(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // Getter methods
+    }
+    ```
+    - **Explanation**: `@Immutable` designates `ImmutableUser` class as immutable, enforcing that its state (fields `name` and `age`) cannot be modified after construction, ensuring thread safety and preventing unintended state changes.
+
+
+
+
+
