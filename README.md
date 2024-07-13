@@ -5661,10 +5661,20 @@ public @interface myMetadata {
     }
     ```
 
-- More on annotation
+- Lombok Annotations
   - `@NoArgsConstructor` - Generate no-argument constructor 
     - Init value to their default values
-  - `@Data` - Includes getter and setters for all fields and setters for all non-final field
+  - `@Getter` & `@Setter`- generates getters & setters for variables
+    - public is the default access level, for changing use `@Getter(AccessLevel.PROTECTED)`
+  - constructor annotations
+    - `@RequiredArgsConstructor` - generates constructors with parameter for each non-initialized final fields & fields that are marked `@NonNull` that are not initialized when declared
+    - `@NoArgsConstructor` - generates constructor with no arguments
+    - `@AllArgsConstructor` - generates contructor with one parameter for each field in your class
+  - `@EqualsAndHashCode` - implements `equals()` and `hashCode()` automatically
+    - by default, all non-static, non-transient fields will be taken into account
+    - modify which fields are used by annotating them with `@EqualsAndHashCode.Include` or `@EqualsAndHashCode.Exclude`
+  - `@Data` - `@Getter` + `@Setter` + `@ToString` + `@EqualsAndHashCode` + `@RequiredArgsConstructor`
+    - includes getter for all fields and setters for all non-final field
     - `@Data` annotation automatically adds getters (`getName()`, `getAge()`), setters (`setName()`, `setAge()`), `toString()`, `equals()`, `hashCode()`, and a no-argument constructor to the Person class. 
 
 - Spring Framework Annotations
