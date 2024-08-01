@@ -4364,8 +4364,10 @@ private class WorkerThread extends Thread {
 
 ### The Executive Service approach
 
-- Thread pool is so common in parallel programming, it is not surprising that Java has higher level tools for creating and managing thread pools
-- The interface `ExecutorService`, in package `java.util.concurrent`, define services that can executed tasks that are submitted to it
+- Thread pool is so common in parallel programming, it is not surprising that Java has 
+   higher level tools for creating and managing thread pools
+- The interface `ExecutorService`, in package `java.util.concurrent`, define services 
+  that can executed tasks that are submitted to it
 - Class `Executor` contains static methods to create `ExecutiveService` of various type
 - `Executor.newFixedThreadPool(n)`, where `n` is an int, creates a thread pool with `n` threads
     
@@ -4399,6 +4401,7 @@ private static class CountPrimeTasks implements Callable<Integer> {
         this.min = min;
         this.max = max;
     }
+    @Override
     public Integer call() {
         int count = countPrimes(min, max);
         return count;
@@ -4425,6 +4428,13 @@ for (Future<Integer> res: results) {
     }
 }
 ```
+
+### More on Executor Framework in Java
+- Type of Executors in Java
+    - SingleThreadExecutor
+    - FixedThreadPool
+    - CachedThreadPool
+    - ScheduledExecutor
 
 ### Wait and Notify
 
